@@ -9,10 +9,10 @@ namespace Blackjack
     public class MainWindowViewModel : Notifier
     {
         #region Properties
-        private HandViewModel _playerHand;
-        public HandViewModel PlayerHand { get; private set; }
-        private HandViewModel _dealerHand;
-        public HandViewModel DealerHand { get; private set; }
+        private Hand _playerHand;
+        public Hand PlayerHand { get; private set; }
+        private Hand _dealerHand;
+        public Hand DealerHand { get; private set; }
 
         private int _cardsInDeck;
         public int CardsInDeck
@@ -58,8 +58,8 @@ namespace Blackjack
         #endregion  
         public MainWindowViewModel()
         {
-            PlayerHand = new HandViewModel();
-            DealerHand = new HandViewModel();
+            PlayerHand = new Hand();
+            DealerHand = new Hand();
             PlayerScore = 0;
             DealerScore = 0;
             MyDeck = new Deck();

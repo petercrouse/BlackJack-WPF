@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blackjack
 {
-    public class HandViewModel : Notifier
+    public class Hand : Notifier
     {
         private ObservableCollection<Card> _cardsInHand;
         public ObservableCollection<Card> CardsInHand
@@ -20,7 +20,7 @@ namespace Blackjack
             }
         }
 
-        public HandViewModel()
+        public Hand()
         {
             CardsInHand = new ObservableCollection<Card>();
         }
