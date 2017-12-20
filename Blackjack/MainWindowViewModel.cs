@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Blackjack
 {
@@ -67,17 +68,67 @@ namespace Blackjack
             NewGame();
         }
         
-        private void DealHands()
+        public void DealHands()
         {
+            PlayerHand.clearHand();
+            DealerHand.clearHand();
             PlayerHand.AddCard(MyDeck.pick());
             PlayerHand.AddCard(MyDeck.pick());
             DealerHand.AddCard(MyDeck.pick());
             DealerHand.AddCard(MyDeck.pick());
+            CardsInDeck = MyDeck.CardsLeft();
         }
         public void NewGame()
         {
-            DealHands();
+            MyDeck.reset();
             CardsInDeck = MyDeck.CardsLeft();
+            PlayerHand.clearHand();
+            DealerHand.clearHand();       
+        }
+
+        public void Hit()
+        {
+            PlayerHand.AddCard(MyDeck.pick());
+
+            if (PlayerHand.handValue() > 21)
+            {
+                MessageBox.Show("Busted! you lose.");
+                DealerScore++;
+            }
+            if (PlayerHand.handValue() < 21 && PlayerHand.CardsInHand.Count >= 5)
+            {
+                MessageBox.Show("Player wins!");
+                PlayerScore++;
+            }
+            CardsInDeck = MyDeck.CardsLeft();
+        }
+
+        public void Stay()
+        {
+            PlayerScore = PlayerHand.handValue();
+            DealerScore = DealerHand.handValue();
+
+            while (DealerScore < 18)
+            {
+                DealerHand.AddCard(MyDeck.pick());
+                DealerScore = DealerHand.handValue();
+            }
+
+            string winner = (DealerScore >= PlayerScore && DealerScore <= 21) ? "Dealer wins!" : "Player wins!";
+            MessageBox.Show(winner);
+            if (winner == "Dealer wins")
+            {
+                DealerScore++;
+            }
+            else
+            {
+                PlayerScore++;
+            }
+        }
+
+        public void SuffleDeck()
+        {
+            MyDeck.reset();
         }
     }
 }

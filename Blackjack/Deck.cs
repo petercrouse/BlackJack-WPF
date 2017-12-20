@@ -43,7 +43,7 @@ namespace Blackjack
             {
                 for (int j = 0; j < cards; j++)
                 {
-                    var name = $"{Card.Suits[i]}{Card.Faces[j]}";
+                    var name = $"{Card.Faces[j]}{Card.Suits[i]}";
                     MyDeck.Add(new Card(name));
                 }
             }
