@@ -66,14 +66,20 @@
                     Grid.Column="1"
                     HorizontalAlignment="Center">
             <TextBlock Text="Player" />
-            <TextBlock Text="Score: " />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Score:" />
+                <TextBlock Text="{Binding PlayerScore}" />
+            </StackPanel>     
         </StackPanel>
 
         <StackPanel Grid.Row="2"
                     Grid.Column="2"
                     HorizontalAlignment="Center">
             <TextBlock Text="Dealer" />
-            <TextBlock Text="Score: " />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Score:" />
+                <TextBlock Text="{Binding DealerScore}" />
+            </StackPanel>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"
@@ -158,6 +164,14 @@
                     <i:EventTrigger EventName="Click">
                         <ei:CallMethodAction TargetObject="{Binding}"
                                              MethodName="SuffleDeck" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </Button>
+            <Button Content="Quit">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Click">
+                        <ei:CallMethodAction TargetObject="{Binding}"
+                                             MethodName="Quit" />
                     </i:EventTrigger>
                 </i:Interaction.Triggers>
             </Button>

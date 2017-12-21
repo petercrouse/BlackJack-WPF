@@ -33,7 +33,7 @@ namespace Blackjack
             }
             else
             {
-                value = Convert.ToInt32(card);
+                value = card - '0';
             }
             return value;
         }

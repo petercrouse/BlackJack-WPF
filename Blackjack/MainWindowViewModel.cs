@@ -105,17 +105,17 @@ namespace Blackjack
 
         public void Stay()
         {
-            PlayerScore = PlayerHand.handValue();
-            DealerScore = DealerHand.handValue();
+            var pScore = PlayerHand.handValue();
+            var dScore = DealerHand.handValue();
 
-            while (DealerScore < 18)
+            while (dScore < 18)
             {
                 DealerHand.AddCard(MyDeck.pick());
-                DealerScore = DealerHand.handValue();
+                dScore = DealerHand.handValue();
             }
 
-            string winner = (DealerScore >= PlayerScore && DealerScore <= 21) ? "Dealer wins!" : "Player wins!";
-            MessageBox.Show(winner);
+            string winner = (dScore >= pScore && dScore <= 21) ? "Dealer wins!" : "Player wins!";
+            MessageBox.Show($"Player: {pScore} Dealer: {dScore}\n{winner}");
             if (winner == "Dealer wins")
             {
                 DealerScore++;
@@ -129,6 +129,12 @@ namespace Blackjack
         public void SuffleDeck()
         {
             MyDeck.reset();
+            CardsInDeck = MyDeck.CardsLeft();
+        }
+
+        public void Quit()
+        {
+            Application.Current.Shutdown();
         }
     }
 }
