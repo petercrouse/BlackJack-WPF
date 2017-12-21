@@ -115,7 +115,7 @@ namespace Blackjack
             }
 
             string winner = (dScore >= pScore && dScore <= 21) ? "Dealer wins!" : "Player wins!";
-            MessageBox.Show($"Player: {pScore} Dealer: {dScore}\n{winner}");
+            MessageBox.Show($"Player: {pScore} Dealer: {dScore}\n\n{winner}");
             if (winner == "Dealer wins")
             {
                 DealerScore++;
