@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack", "Blackjack\Blackjack.csproj", "{F46E33EA-F98B-4A4F-A96A-B8A797C97B24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.client", "Blackjack.client\Blackjack.client.csproj", "{828E41F7-1FE3-4C94-8607-EDC9D86207AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{BE39ADD5-7254-4FBD-B938-BDA566E3AC88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayBlackjackModule", "PlayBlackjack\PlayBlackjackModule.csproj", "{D883A8C5-F927-4B09-BA50-A9B33EF61CF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +15,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F46E33EA-F98B-4A4F-A96A-B8A797C97B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F46E33EA-F98B-4A4F-A96A-B8A797C97B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F46E33EA-F98B-4A4F-A96A-B8A797C97B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F46E33EA-F98B-4A4F-A96A-B8A797C97B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{828E41F7-1FE3-4C94-8607-EDC9D86207AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{828E41F7-1FE3-4C94-8607-EDC9D86207AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{828E41F7-1FE3-4C94-8607-EDC9D86207AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{828E41F7-1FE3-4C94-8607-EDC9D86207AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D883A8C5-F927-4B09-BA50-A9B33EF61CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D883A8C5-F927-4B09-BA50-A9B33EF61CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D883A8C5-F927-4B09-BA50-A9B33EF61CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D883A8C5-F927-4B09-BA50-A9B33EF61CF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D883A8C5-F927-4B09-BA50-A9B33EF61CF9} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DBEC33F-62BA-44B9-9778-AF452E91CF91}
 	EndGlobalSection
 EndGlobal
