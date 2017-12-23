@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D883A8C5-F927-4B09-BA50-A9B33EF61CF9}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlayBlackjack</RootNamespace>
+    <AssemblyName>PlayBlackjack</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Models\Deck.cs" />
+    <Compile Include="Models\Hand.cs" />
+    <Compile Include="PlayBlackjackModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModels\PlayBlackjackViewModel.cs" />
+    <Compile Include="Views\PlayBlackjack.xaml.cs">
+      <DependentUpon>PlayBlackjack.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\2c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\PlayBlackjack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Unity" Version="6.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\2d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\2h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\3c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\3h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\4c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\4d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\4h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\5c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\5d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\5h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\6c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\6d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\6h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\7c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\7d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\7h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\7s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\8c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\8d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\8h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\8s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\9c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\9d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\9h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\9s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\ac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\ad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\ah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\cb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\jc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\jd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\jh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\js.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\kc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\kd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\kh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\ks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\qc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\qd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\qh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\qs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\tc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\td.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\th.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Resources\ts.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
