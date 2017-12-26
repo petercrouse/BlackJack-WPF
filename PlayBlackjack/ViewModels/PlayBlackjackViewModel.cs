@@ -1,6 +1,8 @@
 ﻿using Prism.Mvvm;
 using PlayBlackjackModule.Models;
 using System.Windows;
+using Prism.Commands;
+using System.Windows.Input;
 
 namespace PlayBlackjackModule.ViewModels
 {
@@ -37,7 +39,59 @@ namespace PlayBlackjackModule.ViewModels
             get { return _myDeck; }
             set { SetProperty(ref _myDeck, value); }
         }
-        #endregion  
+        private int _playerHandValue;
+        public int PlayerHandValue
+        {
+            get { return _playerHandValue; }
+            set { SetProperty(ref _playerHandValue, value); }
+        }
+        private int _dealerHandValue;
+        public int DealerHandValue
+        {
+            get { return _dealerHandValue; }
+            set { SetProperty(ref _dealerHandValue, value); }
+        }
+        private bool _dealHandsButtonVisible;
+        public bool DealHandsButtonVisible
+        {
+            get { return _dealHandsButtonVisible; }
+            set { SetProperty(ref _dealHandsButtonVisible, value); }
+        }
+        private bool _hitButtonVisible;
+        public bool HitButtonVisible
+        {
+            get { return _hitButtonVisible; }
+            set { SetProperty(ref _hitButtonVisible, value); }
+        }
+        private bool _stayButtonVisible;
+        public bool StayButtonVisible
+        {
+            get { return _stayButtonVisible; }
+            set { SetProperty(ref _stayButtonVisible, value); }
+        }
+        private bool _shuffleDeckButtonVisible;
+        public bool ShuffleDeckButtonVisible
+        {
+            get { return _shuffleDeckButtonVisible; }
+            set { SetProperty(ref _shuffleDeckButtonVisible, value); }
+        }
+        private string _messageBoard;
+        public string MessageBoard
+        {
+            get { return _messageBoard; }
+            set { SetProperty(ref _messageBoard, value); }
+        }
+        #endregion
+
+        #region commands
+        public DelegateCommand NewGameCommand { get; private set; }
+        public DelegateCommand DealHandsCommand { get; private set; }
+        public DelegateCommand HitCommand { get; private set; }
+        public DelegateCommand StayCommand { get; private set; }
+        public DelegateCommand ShuffleDeckCommand { get; private set; }
+        public DelegateCommand QuitCommand { get; private set; }
+
+        #endregion
 
         public PlayBlackjackViewModel()
         {
@@ -47,79 +101,139 @@ namespace PlayBlackjackModule.ViewModels
             DealerScore = 0;
             MyDeck = new Deck();
             CardsInDeck = MyDeck.CardsLeft();
-            NewGame();
+            NewGameCommand = new DelegateCommand(NewGame);
+            DealHandsCommand = new DelegateCommand(DealHands);
+            HitCommand = new DelegateCommand(Hit);
+            StayCommand = new DelegateCommand(Stay);
+            ShuffleDeckCommand = new DelegateCommand(ShuffleDeck);
+            QuitCommand = new DelegateCommand(Quit);
+            StayButtonVisible = false;
+            HitButtonVisible = false;
+            DealHandsButtonVisible = false;
+            ShuffleDeckButtonVisible = false;
+            DealerHandValue = 0;
+            PlayerHandValue = 0;
         }
 
         #region methods
-        public void DealHands()
+        private void DealHands()
         {
-            PlayerHand.clearHand();
-            DealerHand.clearHand();
-            PlayerHand.AddCard(MyDeck.pick());
-            PlayerHand.AddCard(MyDeck.pick());
-            DealerHand.AddCard(MyDeck.pick());
-            DealerHand.AddCard(MyDeck.pick());
-            CardsInDeck = MyDeck.CardsLeft();
+            if (CardsInDeck < 10)
+            {
+                DealHandsButtonVisible = false;
+                ShuffleDeckButtonVisible = true;
+                MessageBoard = "There is not enough cards\n" +
+                               "in the deck to play the hand.";
+            }
+            else
+            {
+                PlayerHand.clearHand();
+                DealerHand.clearHand();
+                PlayerHand.AddCard(MyDeck.pick());
+                PlayerHand.AddCard(MyDeck.pick());
+                DealerHand.AddCard(MyDeck.pick());
+                DealerHand.AddCard(MyDeck.pick());
+
+                DealerHand.SetHandToCardbackImages();
+
+                HitButtonVisible = true;
+                StayButtonVisible = true;
+                ShuffleDeckButtonVisible = false;
+                DealHandsButtonVisible = false;
+
+                CardsInDeck = MyDeck.CardsLeft();
+                DealerHandValue = 0;
+                PlayerHandValue = 0;
+                MessageBoard = "";
+            }          
         }
-        public void NewGame()
+
+        private void NewGame()
         {
             MyDeck.reset();
             CardsInDeck = MyDeck.CardsLeft();
             PlayerHand.clearHand();
             DealerHand.clearHand();
+
+            ShuffleDeckButtonVisible = true;
+            DealHandsButtonVisible = true;
+
+            DealerHandValue = 0;
+            PlayerHandValue = 0;
+            MessageBoard = "";
         }
 
-        public void Hit()
+        private void Hit()
         {
+            bool endOfRound = false;
             PlayerHand.AddCard(MyDeck.pick());
 
             if (PlayerHand.handValue() > 21)
             {
-                MessageBox.Show("Busted! you lose.");
+                MessageBoard = "Busted! you lose.";
                 DealerScore++;
+                endOfRound = true;
             }
             if (PlayerHand.handValue() < 21 && PlayerHand.CardsInHand.Count >= 5)
             {
-                MessageBox.Show("Player wins!");
+                MessageBoard = "Player wins!";
                 PlayerScore++;
+                endOfRound = true;
+            }
+            if (endOfRound)
+            {
+                DealHandsButtonVisible = true;
+                HitButtonVisible = false;
+                StayButtonVisible = false;
+                ShuffleDeckButtonVisible = true;
             }
             CardsInDeck = MyDeck.CardsLeft();
         }
 
-        public void Stay()
+        private void Stay()
         {
-            var pScore = PlayerHand.handValue();
-            var dScore = DealerHand.handValue();
+            PlayerHandValue = PlayerHand.handValue();
+            DealerHandValue = DealerHand.handValue();
 
-            while (dScore < 18)
+            DealerHand.SetHandCardFaceImages();
+
+            while (DealerHandValue < 18)
             {
                 DealerHand.AddCard(MyDeck.pick());
-                dScore = DealerHand.handValue();
+                DealerHandValue = DealerHand.handValue();
             }
 
-            string winner = (dScore >= pScore && dScore <= 21) ? "Dealer wins!" : "Player wins!";
-            MessageBox.Show($"Player: {pScore} Dealer: {dScore}\n\n{winner}");
-            if (winner == "Dealer wins")
+            string winner = (DealerHandValue >= PlayerHandValue && DealerHandValue <= 21) ? "Dealer wins!" : "Player wins!";
+            if (DealerHandValue == PlayerHandValue) winner = "It's a draw.";
+            MessageBoard = $"{winner}";
+            if (winner == "Dealer wins!")
             {
                 DealerScore++;
             }
-            else
+            if (winner == "Player wins!")
             {
                 PlayerScore++;
             }
-        }
 
-        public void SuffleDeck()
-        {
-            MyDeck.reset();
+            HitButtonVisible = false;
+            StayButtonVisible = false;
+            ShuffleDeckButtonVisible = true;
+            DealHandsButtonVisible = true;
             CardsInDeck = MyDeck.CardsLeft();
         }
 
-        public void Quit()
+        private void ShuffleDeck()
+        {
+            MyDeck.reset();
+            CardsInDeck = MyDeck.CardsLeft();
+            MessageBoard = "";
+            DealHandsButtonVisible = true;
+        }
+
+        private void Quit()
         {
             Application.Current.Shutdown();
         }
-
         #endregion
 
     }

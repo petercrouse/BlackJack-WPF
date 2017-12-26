@@ -5,7 +5,7 @@ namespace PlayBlackjackModule.Models
 {
     public class Card : BindableBase
     {
-        public static readonly List<string> Faces = new List<string>() { "a", "1", "2", "3", "4", "5", "6", "7", "8", "9", "t", "j", "q", "k" };
+        public static readonly List<string> Faces = new List<string>() { "a", "2", "3", "4", "5", "6", "7", "8", "9", "t", "j", "q", "k" };
         public static readonly List<string> Suits = new List<string>() { "c", "s", "h", "d" };
         private string _name;
         public string Name
@@ -50,14 +50,9 @@ namespace PlayBlackjackModule.Models
             return Name[0] == 'a';
         }
 
-        public override string ToString()
+        public void SetImageSource()
         {
-            return $"Resources/{Name}.png";
-        }
-
-        private void SetImageSource()
-        {
-            ImageSource = ToString();
+            ImageSource = $"Resources/{Name}.png";
         }
 
     }

@@ -6,7 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d" 
              xmlns:prism="http://prismlibrary.com/"
-             prism:ViewModelLocator.AutoWireViewModel="True" >
+             prism:ViewModelLocator.AutoWireViewModel="True">
     <UserControl.Background>
         <ImageBrush ImageSource="Resources/background.jpg" />
     </UserControl.Background>
@@ -15,130 +15,191 @@
         <Style TargetType="TextBlock">
             <Setter Property="Foreground"
                     Value="White" />
-            <Setter Property="Margin"
-                    Value="5" />
         </Style>
 
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
-        <Menu Grid.ColumnSpan="5">
-            <MenuItem Header="File">
-                <MenuItem Header="Exit" />
-            </MenuItem>
-            <MenuItem Header="Commands">
-                <MenuItem Header="New Game" />
-                <Separator />
-                <MenuItem Header="Deal Hand" />
-                <MenuItem Header="Hit" />
-                <MenuItem Header="Stay" />
-                <MenuItem Header="Shuffle Deck" />
-            </MenuItem>
-        </Menu>
-
-        <TextBlock FontSize="28"
-                   Grid.Row="1"
+        <TextBlock FontSize="36"
+                   Grid.Row="0"
                    Grid.Column="1"
                    Grid.ColumnSpan="2"
                    Text="BlackJack 21"
                    HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
                    Foreground="White" />
 
-        <StackPanel Grid.Row="2"
+        <StackPanel Grid.Row="1"
                     Grid.Column="1"
-                    HorizontalAlignment="Center">
-            <TextBlock Text="Player" />
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Score:" />
-                <TextBlock Text="{Binding PlayerScore}" />
+                <TextBlock Text="Player"
+                           FontSize="24"
+                           Margin="0,5,20,0"/>
+
+                <TextBlock Text="{Binding PlayerScore}"
+                           FontSize="32"/>
+
+                <TextBlock Text=":"
+                           FontSize="32" />
+
+                <TextBlock Text="{Binding DealerScore}"
+                           FontSize="32" />
+
+                <TextBlock Text="Dealer"
+                           FontSize="24"
+                           Margin="20,5,0,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        HorizontalAlignment="Center">
+                
+                <TextBlock Text="Cards left in deck: "
+                           FontSize="18"/>
+                <TextBlock Text="{Binding CardsInDeck}"
+                           FontSize="18"/>
             </StackPanel>
         </StackPanel>
-
-        <StackPanel Grid.Row="2"
-                    Grid.Column="2"
-                    HorizontalAlignment="Center">
-            <TextBlock Text="Dealer" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Score:" />
-                <TextBlock Text="{Binding DealerScore}" />
-            </StackPanel>
+        
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
+            
+            <TextBlock Text="Player hand value: "
+                       FontSize="18"
+                       Margin="20,20,5,20"/>
+            <TextBlock Text="{Binding PlayerHandValue}" 
+                       FontSize="18"
+                       Margin="0,20,20,20"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"
-                    Grid.Row="3"
+                    Grid.Row="5"
                     Grid.Column="1"
-                    Grid.ColumnSpan="2"
-                    HorizontalAlignment="Center">
-            <TextBlock Text="Cards left in deck: " />
-            <TextBlock Text="{Binding CardsInDeck}" />
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
+            
+            <TextBlock Text="Dealer hand value: "
+                       FontSize="18"
+                       Margin="0, 20, 5, 20"/>
+            <TextBlock Text="{Binding DealerHandValue}" 
+                       FontSize="18"
+                       Margin="0,20,20,0"/>
         </StackPanel>
 
-        <Grid Grid.Row="4"
-              Grid.Column="1">
+        
+
+        <Grid Grid.Row="3"
+              Grid.Column="0"
+              Grid.ColumnSpan="4">
             <ListView ItemsSource="{Binding PlayerHand.CardsInHand}"
                  Background="Transparent"
                   BorderBrush="Transparent">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" 
+                                    Background="Transparent"
+                                    Margin="20,0,0,0"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Image Source="{Binding ImageSource}" 
-                           HorizontalAlignment="Center"
-                           Margin="5,0,5,0"/>
-
+                               Height="96"
+                               Width="72"                               
+                               Margin="0,0,0,0"/>
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
 
-        <Grid Grid.Row="4"
-              Grid.Column="2">
+        <TextBlock Text="{Binding MessageBoard}"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="3"
+                   Margin="0,20,0,0"
+                   FontSize="28" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"/>
+
+        <Grid Grid.Row="6"
+              Grid.Column="1"
+              Grid.ColumnSpan="3">
             <ListView ItemsSource="{Binding DealerHand.CardsInHand}"
                  Background="Transparent"
                   BorderBrush="Transparent">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" 
+                                    Background="Transparent"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding ImageSource}" 
-                           HorizontalAlignment="Center"
-                           Margin="5,0,5,0"/>
+                        <Image Source="{Binding ImageSource}"
+                               Height="96"
+                               Width="72"/>
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
 
-        <StackPanel Grid.Row="1"
-                    Grid.Column="4"
-                    Grid.RowSpan="4"
+        <StackPanel Grid.Row="0"
+                    Grid.Column="8"
+                    Grid.RowSpan="10"
                     Background="Beige">
-            <Button Content="New Game">
+            <Button Content="New Game"
+                    Command="{Binding NewGameCommand}">
+                
+            </Button>
+            <Button Content="Deal Hand"
+                    Command="{Binding DealHandsCommand}"
+                    IsEnabled="{Binding DealHandsButtonVisible}">
+                
+            </Button>
+            <Button Content="Hit" 
+                    Command="{Binding HitCommand}"
+                    IsEnabled="{Binding HitButtonVisible}">
 
             </Button>
-            <Button Content="Deal Hand">
+            <Button Content="Stay"
+                    Command="{Binding StayCommand}"
+                    IsEnabled="{Binding StayButtonVisible}">
 
             </Button>
-            <Button Content="Hit" >
+            <Button Content="Shuffle Deck"
+                    Command="{Binding ShuffleDeckCommand}"
+                    IsEnabled="{Binding ShuffleDeckButtonVisible}">
 
             </Button>
-            <Button Content="Stay">
-
-            </Button>
-            <Button Content="Shuffle Deck">
-
-            </Button>
-            <Button Content="Quit">
+            <Button Content="Quit"
+                    Command="{Binding QuitCommand}">
 
             </Button>
         </StackPanel>

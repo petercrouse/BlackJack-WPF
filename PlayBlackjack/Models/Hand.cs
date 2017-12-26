@@ -47,5 +47,20 @@ namespace PlayBlackjackModule.Models
             CardsInHand.Clear();
         }
 
+        public void SetHandToCardbackImages()
+        {
+            foreach (var card in CardsInHand)
+            {
+                card.ImageSource = $"Resources/cb.png";
+            }
+        }
+
+        public void SetHandCardFaceImages()
+        {
+            foreach (var card in CardsInHand)
+            {
+                card.SetImageSource();
+            }
+        }
     }
 }
