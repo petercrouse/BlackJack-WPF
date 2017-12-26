@@ -50,14 +50,9 @@ namespace PlayBlackjackModule.Models
             return Name[0] == 'a';
         }
 
-        public override string ToString()
+        public void SetImageSource()
         {
-            return $"Resources/{Name}.png";
-        }
-
-        private void SetImageSource()
-        {
-            ImageSource = ToString();
+            ImageSource = $"Resources/{Name}.png";
         }
 
     }

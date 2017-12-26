@@ -20,21 +20,21 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="70"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="100"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock FontSize="36"
@@ -55,20 +55,20 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Player"
                            FontSize="24"
-                           Margin="0,0,5,0"/>
+                           Margin="0,5,20,0"/>
 
                 <TextBlock Text="{Binding PlayerScore}"
-                           FontSize="24"/>
+                           FontSize="32"/>
 
                 <TextBlock Text=":"
-                           FontSize="24" />
+                           FontSize="32" />
 
                 <TextBlock Text="{Binding DealerScore}"
-                           FontSize="24" />
+                           FontSize="32" />
 
                 <TextBlock Text="Dealer"
                            FontSize="24"
-                           Margin="5,0,0,0" />
+                           Margin="20,5,0,0" />
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         Grid.Row="3"
@@ -86,24 +86,29 @@
         <StackPanel Orientation="Horizontal"
                     Grid.Row="2"
                     Grid.Column="0"
-                    HorizontalAlignment="Center">
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
             
             <TextBlock Text="Player hand value: "
                        FontSize="18"
-                       Margin="20,0,0,0"/>
+                       Margin="20,20,5,20"/>
             <TextBlock Text="{Binding PlayerHandValue}" 
-                       FontSize="18"/>
+                       FontSize="18"
+                       Margin="0,20,20,20"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal"
                     Grid.Row="5"
                     Grid.Column="1"
-                    HorizontalAlignment="Center">
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom">
             
             <TextBlock Text="Dealer hand value: "
-                       FontSize="18"/>
+                       FontSize="18"
+                       Margin="0, 20, 5, 20"/>
             <TextBlock Text="{Binding DealerHandValue}" 
-                       FontSize="18"/>
+                       FontSize="18"
+                       Margin="0,20,20,0"/>
         </StackPanel>
 
         
@@ -117,15 +122,17 @@
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" 
-                                    Background="Transparent"/>
+                                    Background="Transparent"
+                                    Margin="20,0,0,0"/>
                     </ItemsPanelTemplate>
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Image Source="{Binding ImageSource}" 
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"
-                                   Margin="20,0,0,0"/>
+                               Height="96"
+                               Width="72"                               
+                               Margin="0,0,0,0"/>
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -134,7 +141,11 @@
         <TextBlock Text="{Binding MessageBoard}"
                    Grid.Row="4"
                    Grid.Column="1"
-                   FontSize="28" />
+                   Grid.ColumnSpan="3"
+                   Margin="0,20,0,0"
+                   FontSize="28" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"/>
 
         <Grid Grid.Row="6"
               Grid.Column="1"
@@ -150,9 +161,9 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding ImageSource}" 
-                           HorizontalAlignment="Center"
-                           Margin="5,0,5,0"/>
+                        <Image Source="{Binding ImageSource}"
+                               Height="96"
+                               Width="72"/>
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -160,8 +171,8 @@
         </Grid>
 
         <StackPanel Grid.Row="0"
-                    Grid.Column="4"
-                    Grid.RowSpan="7"
+                    Grid.Column="8"
+                    Grid.RowSpan="10"
                     Background="Beige">
             <Button Content="New Game"
                     Command="{Binding NewGameCommand}">

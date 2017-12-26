@@ -118,22 +118,34 @@ namespace PlayBlackjackModule.ViewModels
         #region methods
         private void DealHands()
         {
-            PlayerHand.clearHand();
-            DealerHand.clearHand();
-            PlayerHand.AddCard(MyDeck.pick());
-            PlayerHand.AddCard(MyDeck.pick());
-            DealerHand.AddCard(MyDeck.pick());
-            DealerHand.AddCard(MyDeck.pick());
+            if (CardsInDeck < 10)
+            {
+                DealHandsButtonVisible = false;
+                ShuffleDeckButtonVisible = true;
+                MessageBoard = "There is not enough cards\n" +
+                               "in the deck to play the hand.";
+            }
+            else
+            {
+                PlayerHand.clearHand();
+                DealerHand.clearHand();
+                PlayerHand.AddCard(MyDeck.pick());
+                PlayerHand.AddCard(MyDeck.pick());
+                DealerHand.AddCard(MyDeck.pick());
+                DealerHand.AddCard(MyDeck.pick());
 
-            HitButtonVisible = true;
-            StayButtonVisible = true;
-            ShuffleDeckButtonVisible = false;
-            DealHandsButtonVisible = false;
+                DealerHand.SetHandToCardbackImages();
 
-            CardsInDeck = MyDeck.CardsLeft();
-            DealerHandValue = 0;
-            PlayerHandValue = 0;
-            MessageBoard = "";
+                HitButtonVisible = true;
+                StayButtonVisible = true;
+                ShuffleDeckButtonVisible = false;
+                DealHandsButtonVisible = false;
+
+                CardsInDeck = MyDeck.CardsLeft();
+                DealerHandValue = 0;
+                PlayerHandValue = 0;
+                MessageBoard = "";
+            }          
         }
 
         private void NewGame()
@@ -183,6 +195,8 @@ namespace PlayBlackjackModule.ViewModels
             PlayerHandValue = PlayerHand.handValue();
             DealerHandValue = DealerHand.handValue();
 
+            DealerHand.SetHandCardFaceImages();
+
             while (DealerHandValue < 18)
             {
                 DealerHand.AddCard(MyDeck.pick());
@@ -212,13 +226,13 @@ namespace PlayBlackjackModule.ViewModels
             MyDeck.reset();
             CardsInDeck = MyDeck.CardsLeft();
             MessageBoard = "";
+            DealHandsButtonVisible = true;
         }
 
         private void Quit()
         {
             Application.Current.Shutdown();
         }
-
         #endregion
 
     }
