@@ -204,12 +204,13 @@ namespace PlayBlackjackModule.ViewModels
             }
 
             string winner = (DealerHandValue >= PlayerHandValue && DealerHandValue <= 21) ? "Dealer wins!" : "Player wins!";
+            if (DealerHandValue == PlayerHandValue) winner = "It's a draw.";
             MessageBoard = $"{winner}";
             if (winner == "Dealer wins!")
             {
                 DealerScore++;
             }
-            else
+            if (winner == "Player wins!")
             {
                 PlayerScore++;
             }
