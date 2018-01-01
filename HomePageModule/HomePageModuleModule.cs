@@ -1,4 +1,4 @@
-﻿using PlayBlackjackModule.Views;
+﻿using HomePageModule.Views;
 using Prism.Modularity;
 using Prism.Regions;
 using System;
@@ -6,14 +6,14 @@ using Microsoft.Practices.Unity;
 using Prism.Unity;
 using Shared;
 
-namespace PlayBlackjackModule
+namespace HomePageModule
 {
-    public class PlayBlackjackModule : IModule
+    public class HomePageModuleModule : IModule
     {
         private IRegionManager _regionManager;
         private IUnityContainer _container;
 
-        public PlayBlackjackModule(IUnityContainer container, IRegionManager regionManager)
+        public HomePageModuleModule(IUnityContainer container, IRegionManager regionManager)
         {
             _container = container;
             _regionManager = regionManager;
@@ -21,8 +21,8 @@ namespace PlayBlackjackModule
 
         public void Initialize()
         {
-            _container.RegisterTypeForNavigation<PlayBlackjack>();
-            _regionManager.RegisterViewWithRegion(Constants.Regions.MainRegion, typeof(PlayBlackjack));
+            _container.RegisterTypeForNavigation<HomePage>();
+            _regionManager.RegisterViewWithRegion(Constants.Regions.MainRegion, typeof(HomePage));
         }
     }
 }

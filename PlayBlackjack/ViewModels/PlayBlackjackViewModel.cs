@@ -3,10 +3,13 @@ using PlayBlackjackModule.Models;
 using System.Windows;
 using Prism.Commands;
 using System.Windows.Input;
+using Prism.Regions;
+using Shared.ViewModels;
+using Prism.Events;
 
 namespace PlayBlackjackModule.ViewModels
 {
-    public class PlayBlackjackViewModel : BindableBase
+    public class PlayBlackjackViewModel : GameViewModel
     {
         #region Properties
         private Hand _playerHand;
@@ -93,7 +96,7 @@ namespace PlayBlackjackModule.ViewModels
 
         #endregion
 
-        public PlayBlackjackViewModel()
+        public PlayBlackjackViewModel(IRegionManager regionManager, IEventAggregator eventAggregator): base(regionManager, eventAggregator)
         {
             PlayerHand = new Hand();
             DealerHand = new Hand();
@@ -233,6 +236,21 @@ namespace PlayBlackjackModule.ViewModels
         private void Quit()
         {
             Application.Current.Shutdown();
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            throw new System.NotImplementedException();
         }
         #endregion
 

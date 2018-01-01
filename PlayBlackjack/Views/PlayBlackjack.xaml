@@ -16,7 +16,12 @@
             <Setter Property="Foreground"
                     Value="White" />
         </Style>
+        <!--A Style for buttons-->
+        <Style TargetType="Button">
+            <Setter Property="Background"
+                    Value="DarkGray"/>
 
+        </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -173,7 +178,7 @@
         <StackPanel Grid.Row="0"
                     Grid.Column="8"
                     Grid.RowSpan="10"
-                    Background="Beige">
+                    Background="LightGray">
             <Button Content="New Game"
                     Command="{Binding NewGameCommand}">
                 

@@ -4,6 +4,10 @@ using Prism.Modularity;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
 using PlayBlackjackModule.Views;
+using Shared;
+using Prism.Regions;
+using System.Windows.Controls;
+using HomePageModule.Views;
 
 namespace Blackjack.client
 {
@@ -22,15 +26,19 @@ namespace Blackjack.client
         protected override void ConfigureModuleCatalog()
         {
             var moduleCatalog = (ModuleCatalog)ModuleCatalog;
-            //moduleCatalog.AddModule(typeof(YOUR_MODULE));
+            moduleCatalog.AddModule(typeof(HomePageModule.HomePageModuleModule));
             moduleCatalog.AddModule(typeof(PlayBlackjackModule.PlayBlackjackModule));
+            
+
         }
 
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
 
-            Container.RegisterType(typeof(object), typeof(PlayBlackjack));
+            Container.RegisterType(typeof(object), typeof(PlayBlackjack), Constants.Views.PlayBlackjack);
+            Container.RegisterType(typeof(object), typeof(HomePage), Constants.Views.HomePage);
         }
+
     }
 }

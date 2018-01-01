@@ -4,7 +4,25 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" MinHeight="800" MinWidth="1200">
-    <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-    </Grid>
+    <DockPanel>
+        <Border x:Name="Menubar"
+                DockPanel.Dock="Top"
+                Height="27" 
+                Background="Maroon">
+            <ContentControl prism:RegionManager.RegionName="ToolbarRegion"/>
+        </Border>
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition />
+                <RowDefinition Height="27" />
+            </Grid.RowDefinitions>
+            <ContentControl Grid.Row="0"
+                            prism:RegionManager.RegionName="MainRegion" />
+            <Border x:Name="StatusBar"
+                    Grid.Row="1"
+                    Height="27" 
+                    Background="Maroon" />
+            <ContentControl prism:RegionManager.RegionName="StatusbarRegion" />
+        </Grid>
+    </DockPanel>
 </Window>

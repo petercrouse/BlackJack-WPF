@@ -251,5 +251,11 @@
   <ItemGroup>
     <Resource Include="Views\Resources\ts.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{18291b8a-3eb1-4057-ba93-8a447eea105f}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

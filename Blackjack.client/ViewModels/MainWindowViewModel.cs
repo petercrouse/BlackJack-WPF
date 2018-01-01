@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using Prism.Regions;
+using Shared;
 
 namespace Blackjack.client.ViewModels
 {
@@ -10,10 +13,12 @@ namespace Blackjack.client.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
+        public DelegateCommand<string> NavigateCommand { get; set; }
 
         public MainWindowViewModel()
         {
 
         }
+
     }
 }
