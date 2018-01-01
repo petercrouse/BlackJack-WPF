@@ -12,9 +12,7 @@ namespace PlayBlackjackModule.ViewModels
     public class PlayBlackjackViewModel : GameViewModel
     {
         #region Properties
-        private Hand _playerHand;
         public Hand PlayerHand { get; private set; }
-        private Hand _dealerHand;
         public Hand DealerHand { get; private set; }
 
         private int _cardsInDeck;
@@ -240,20 +238,6 @@ namespace PlayBlackjackModule.ViewModels
             Application.Current.Shutdown();
         }
 
-        public void OnNavigatedTo(NavigationContext navigationContext)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool IsNavigationTarget(NavigationContext navigationContext)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void OnNavigatedFrom(NavigationContext navigationContext)
-        {
-            throw new System.NotImplementedException();
-        }
         #endregion
 
     }
