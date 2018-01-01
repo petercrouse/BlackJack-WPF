@@ -43,7 +43,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.ColumnSpan="3"
-                   FontFamily="Forte"
+                   FontFamily="Impact"
                    Foreground="White"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"

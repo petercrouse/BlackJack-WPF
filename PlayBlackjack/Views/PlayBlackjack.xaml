@@ -28,10 +28,10 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="110"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="110"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -123,7 +123,7 @@
               Grid.ColumnSpan="4">
             <ListView ItemsSource="{Binding PlayerHand.CardsInHand}"
                  Background="Transparent"
-                  BorderBrush="Transparent">
+                 BorderBrush="Transparent">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" 
@@ -135,8 +135,7 @@
                     <DataTemplate>
                         <Image Source="{Binding ImageSource}" 
                                Height="96"
-                               Width="72"                               
-                               Margin="0,0,0,0"/>
+                               Width="72" />
                         
                     </DataTemplate>
                 </ListView.ItemTemplate>

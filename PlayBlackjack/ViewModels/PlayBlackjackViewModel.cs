@@ -163,6 +163,8 @@ namespace PlayBlackjackModule.ViewModels
 
             DealerHandValue = 0;
             PlayerHandValue = 0;
+            PlayerScore = 0;
+            DealerScore = 0;
             MessageBoard = "";
         }
 
