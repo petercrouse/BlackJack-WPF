@@ -57,7 +57,7 @@
                     FontSize="48"
                     Background="CornflowerBlue"
                     Foreground="White"
-                    Command="{Binding PlayBlackjackGameCommand}"/>
+                    Command="{Binding NavigateToPlayBlackjackCommand}"/>
 
     </Grid>
 </UserControl>

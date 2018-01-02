@@ -27,6 +27,7 @@ namespace Blackjack.client
         {
             var moduleCatalog = (ModuleCatalog)ModuleCatalog;
             moduleCatalog.AddModule(typeof(HomePageModule.HomePageModuleModule));
+            moduleCatalog.AddModule(typeof(ToolbarModule.ToolBarModule));
             moduleCatalog.AddModule(typeof(PlayBlackjackModule.PlayBlackjackModule));
             
 
@@ -38,6 +39,7 @@ namespace Blackjack.client
 
             Container.RegisterType(typeof(object), typeof(PlayBlackjack), Constants.Views.PlayBlackjack);
             Container.RegisterType(typeof(object), typeof(HomePage), Constants.Views.HomePage);
+            Container.RegisterType(typeof(object), typeof(ToolBar), Constants.Views.ToolBar);
         }
 
     }

@@ -8,14 +8,14 @@ namespace HomePageModule.ViewModels
 {
     public class HomePageViewModel : GameViewModel
     {
-        public DelegateCommand PlayBlackjackGameCommand { get; set; }
+        public DelegateCommand NavigateToPlayBlackjackCommand { get; set; }
 
         public HomePageViewModel(IRegionManager regionManager, IEventAggregator eventAggregator): base(regionManager, eventAggregator)
         {
-            PlayBlackjackGameCommand = new DelegateCommand(PlayBlackjackGame);
+            NavigateToPlayBlackjackCommand = new DelegateCommand(NavigateToPlayBlackjack);
         }
 
-        private void PlayBlackjackGame()
+        private void NavigateToPlayBlackjack()
         {
             RegionManager.RequestNavigate(Constants.Regions.MainRegion, Constants.Views.PlayBlackjack);
         }
