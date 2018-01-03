@@ -8,6 +8,7 @@ using Shared;
 using Prism.Regions;
 using System.Windows.Controls;
 using HomePageModule.Views;
+using StatusbarModule.Views;
 
 namespace Blackjack.client
 {
@@ -29,7 +30,7 @@ namespace Blackjack.client
             moduleCatalog.AddModule(typeof(HomePageModule.HomePageModuleModule));
             moduleCatalog.AddModule(typeof(ToolbarModule.ToolBarModule));
             moduleCatalog.AddModule(typeof(PlayBlackjackModule.PlayBlackjackModule));
-            
+            moduleCatalog.AddModule(typeof(StatusbarModule.StatusbarModuleModule));
 
         }
 
@@ -40,6 +41,7 @@ namespace Blackjack.client
             Container.RegisterType(typeof(object), typeof(PlayBlackjack), Constants.Views.PlayBlackjack);
             Container.RegisterType(typeof(object), typeof(HomePage), Constants.Views.HomePage);
             Container.RegisterType(typeof(object), typeof(ToolBar), Constants.Views.ToolBar);
+            Container.RegisterType(typeof(object), typeof(Statusbar), Constants.Views.Statusbar);
         }
 
     }

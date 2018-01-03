@@ -20,6 +20,7 @@ namespace Shared
             public const string PlayBlackjack = "PlayBlackjack";
             public const string HomePage = "HomePage";
             public const string ToolBar = "ToolBar";
+            public const string Statusbar = "Statusbar";
         }
     }
 }

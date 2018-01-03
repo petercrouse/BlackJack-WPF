@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomePageModule", "HomePageM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBarModule", "ToolbarModule\ToolBarModule.csproj", "{673446FA-0FF7-4E2E-85DA-0D358FEE17ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusbarModule", "StatusbarModule\StatusbarModule.csproj", "{C78F9539-5FA2-4C91-86A8-138777AAF987}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{673446FA-0FF7-4E2E-85DA-0D358FEE17ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{673446FA-0FF7-4E2E-85DA-0D358FEE17ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{673446FA-0FF7-4E2E-85DA-0D358FEE17ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78F9539-5FA2-4C91-86A8-138777AAF987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78F9539-5FA2-4C91-86A8-138777AAF987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78F9539-5FA2-4C91-86A8-138777AAF987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78F9539-5FA2-4C91-86A8-138777AAF987}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{18291B8A-3EB1-4057-BA93-8A447EEA105F} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
 		{5181E0BB-82DF-459E-BB85-A7BD00A09A7B} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
 		{673446FA-0FF7-4E2E-85DA-0D358FEE17ED} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
+		{C78F9539-5FA2-4C91-86A8-138777AAF987} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DBEC33F-62BA-44B9-9778-AF452E91CF91}
