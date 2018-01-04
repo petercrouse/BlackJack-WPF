@@ -2,7 +2,7 @@
 using System;
 using System.Collections.ObjectModel;
 
-namespace PlayBlackjackModule.Models
+namespace Shared.Models
 {
     public class Deck : BindableBase
     {

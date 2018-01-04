@@ -1,7 +1,8 @@
 ﻿using Prism.Mvvm;
+using Shared.Converters;
 using System.Collections.ObjectModel;
 
-namespace PlayBlackjackModule.Models
+namespace Shared.Models
 {
     public class Hand : BindableBase
     {
@@ -51,7 +52,7 @@ namespace PlayBlackjackModule.Models
         {
             foreach (var card in CardsInHand)
             {
-                card.ImageSource = $"Resources/cb.png";
+                card.ImageSource = CardToImageConverter.CardImagePath("cb");
             }
         }
 

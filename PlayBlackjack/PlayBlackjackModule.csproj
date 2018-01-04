@@ -49,9 +49,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Card.cs" />
-    <Compile Include="Models\Deck.cs" />
-    <Compile Include="Models\Hand.cs" />
     <Compile Include="PlayBlackjackModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -81,9 +78,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\Resources\2c.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="Views\PlayBlackjack.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -93,169 +87,11 @@
     <PackageReference Include="Prism.Unity" Version="6.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\Resources\2d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\2h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\2s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\3c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\3d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\3h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\3s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\4c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\4d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\4h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\4s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\5c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\5d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\5h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\5s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\6c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\6d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\6h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\6s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\7c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\7d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\7h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\7s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\8c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\8d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\8h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\8s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\9c.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\9d.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\9h.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\9s.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\ac.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\ad.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\ah.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\as.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\cb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\jc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\jd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\jh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\js.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\kc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\kd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\kh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\ks.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\qc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\qd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\qh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\qs.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\tc.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\td.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\th.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Views\Resources\ts.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{18291b8a-3eb1-4057-ba93-8a447eea105f}</Project>
       <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

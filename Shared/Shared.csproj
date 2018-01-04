@@ -50,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Models\Card.cs" />
+    <Compile Include="Converters\CardToImageConverter.cs" />
+    <Compile Include="Models\Deck.cs" />
+    <Compile Include="Models\Hand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -81,6 +85,168 @@
     <PackageReference Include="Prism.Unity">
       <Version>6.3.0</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\5c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\5d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\5h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\6c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\6d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\6h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\7c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\7d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\7h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\7s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\9c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\9d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\9h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\9s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ac.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ah.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\jc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\jd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\jh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\js.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\qc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\qd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\qh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\qs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\tc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\td.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\th.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ts.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,11 +1,9 @@
-﻿using Prism.Mvvm;
-using PlayBlackjackModule.Models;
-using System.Windows;
+﻿using System.Windows;
 using Prism.Commands;
-using System.Windows.Input;
 using Prism.Regions;
 using Shared.ViewModels;
 using Prism.Events;
+using Shared.Models;
 
 namespace PlayBlackjackModule.ViewModels
 {
