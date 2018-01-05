@@ -14,17 +14,15 @@ namespace Shared.Models
             get { return _name; }
             set { SetProperty(ref _name, value); }
         }
-        private string _imageSource;
-        public string ImageSource
+
+        public Card()
         {
-            get { return _imageSource; }
-            set { SetProperty(ref _imageSource, value); }
+
         }
 
-        public Card(string name)
+        public Card(string name) : this()
         {
             Name = name;
-            SetImageSource();
         }
 
         public int value()
@@ -49,11 +47,6 @@ namespace Shared.Models
         public bool IsAce()
         {
             return Name[0] == 'a';
-        }
-
-        public void SetImageSource()
-        {
-            ImageSource = CardToImageConverter.CardImagePath(Name);
         }
 
     }

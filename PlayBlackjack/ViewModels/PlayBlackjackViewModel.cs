@@ -133,7 +133,7 @@ namespace PlayBlackjackModule.ViewModels
                 DealerHand.AddCard(MyDeck.pick());
                 DealerHand.AddCard(MyDeck.pick());
 
-                DealerHand.SetHandToCardbackImages();
+                //DealerHand.SetHandToCardbackImages();
 
                 HitButtonVisible = true;
                 StayButtonVisible = true;
@@ -196,7 +196,7 @@ namespace PlayBlackjackModule.ViewModels
             PlayerHandValue = PlayerHand.handValue();
             DealerHandValue = DealerHand.handValue();
 
-            DealerHand.SetHandCardFaceImages();
+            //DealerHand.SetHandCardFaceImages();
 
             while (DealerHandValue < 18)
             {

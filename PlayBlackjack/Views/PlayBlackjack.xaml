@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converter="clr-namespace:Shared.Converters;assembly=Shared"
+             xmlns:card="clr-namespace:Shared.Models;assembly=Shared"
              mc:Ignorable="d" 
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True">
@@ -26,6 +27,19 @@
         </Style>
 
         <converter:CardToImageConverter x:Key="cardToImageConverter" />
+
+            <ItemsPanelTemplate x:Key="CardItems">
+                <StackPanel Orientation="Horizontal" 
+                                    Background="Transparent"
+                                    Margin="20,0,0,0"/>
+            </ItemsPanelTemplate>
+
+        <DataTemplate DataType="{Binding Path=}">
+            <Image Source="{Binding Converter={StaticResource ResourceKey=cardToImageConverter}}" 
+                       Height="96"
+                       Width="72" />
+
+        </DataTemplate>
 
     </UserControl.Resources>
     <Grid>
@@ -129,21 +143,7 @@
             <ListView ItemsSource="{Binding PlayerHand.CardsInHand}"
                  Background="Transparent"
                  BorderBrush="Transparent">
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" 
-                                    Background="Transparent"
-                                    Margin="20,0,0,0"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding ImageSource}" 
-                               Height="96"
-                               Width="72" />
-                        
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+                
             </ListView>
         </Grid>
 
