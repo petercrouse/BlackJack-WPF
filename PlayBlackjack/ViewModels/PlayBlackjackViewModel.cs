@@ -4,6 +4,7 @@ using Prism.Regions;
 using Shared.ViewModels;
 using Prism.Events;
 using Shared.Models;
+using Shared.Events;
 
 namespace PlayBlackjackModule.ViewModels
 {
@@ -78,7 +79,11 @@ namespace PlayBlackjackModule.ViewModels
         public string MessageBoard
         {
             get { return _messageBoard; }
-            set { SetProperty(ref _messageBoard, value); }
+            set
+            {
+                SetProperty(ref _messageBoard, value);
+                EventAggregator.GetEvent<GameMessageEvent>().Publish(_messageBoard);
+            }
         }
         #endregion
 

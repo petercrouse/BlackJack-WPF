@@ -2,6 +2,7 @@
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
+using Shared.Events;
 using Shared.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -18,16 +19,12 @@ namespace StatusbarModule.ViewModels
 
         public StatusbarViewModel(IRegionManager regionManager, IEventAggregator eventAggregator) : base(regionManager, eventAggregator)
         {
+            EventAggregator.GetEvent<GameMessageEvent>().Subscribe(GameMessage);
+
             System.Timers.Timer clockTimer = new System.Timers.Timer(1000);
             clockTimer.Interval = 1000;
             clockTimer.Elapsed += ClockTimer_Elapsed;
             clockTimer.Start();
-        }
-
-        private void ClockTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            Time = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
-            Trace.WriteLine(Time);
         }
 
         private string _time;
@@ -39,7 +36,24 @@ namespace StatusbarModule.ViewModels
                 SetProperty( ref _time, value);                
             }
         }
+        private string _message;
+        public string Message
+        {
+            get { return _message; }
+            set
+            {
+                SetProperty(ref _message, value);
+            }
+        }
 
+        private void ClockTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            Time = DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString();
+        }
 
+        private void GameMessage(string message)
+        {
+            Message = message;
+        }
     }
 }

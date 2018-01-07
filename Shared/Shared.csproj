@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Events\GameMessageEvent.cs" />
     <Compile Include="Models\Card.cs" />
     <Compile Include="Converters\CardToImageConverter.cs" />
     <Compile Include="Models\Deck.cs" />
