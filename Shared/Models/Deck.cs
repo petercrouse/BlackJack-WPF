@@ -42,17 +42,6 @@ namespace Shared.Models
             }
         }
 
-        public override string ToString()
-        {
-            string cards = "";
-
-            foreach(var card in MyDeck)
-            {
-                cards += $"{card.Name}\n";
-            }
-            return cards;
-        }
-
         public int CardsLeft()
         {
             return MyDeck.Count;

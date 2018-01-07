@@ -9,20 +9,27 @@
                 DockPanel.Dock="Top"
                 Height="27" 
                 Background="Maroon">
+            
             <ContentControl prism:RegionManager.RegionName="ToolbarRegion"/>
+            
         </Border>
+        
         <Grid>
+            
             <Grid.RowDefinitions >
                 <RowDefinition />
                 <RowDefinition Height="27" />
             </Grid.RowDefinitions>
-            <ContentControl Grid.Row="0"
-                            prism:RegionManager.RegionName="MainRegion" />
+            
+            <ContentControl prism:RegionManager.RegionName="MainRegion" />
+            
             <Border x:Name="StatusBar"
                     Grid.Row="1"
                     Height="27" 
-                    Background="Maroon" />
-            <ContentControl prism:RegionManager.RegionName="StatusbarRegion" />
+                    Background="Maroon">
+                <ContentControl prism:RegionManager.RegionName="StatusbarRegion" />
+            </Border>
+            
         </Grid>
     </DockPanel>
 </Window>

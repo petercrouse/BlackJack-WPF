@@ -29,7 +29,7 @@ namespace Blackjack.client
             var moduleCatalog = (ModuleCatalog)ModuleCatalog;
             moduleCatalog.AddModule(typeof(HomePageModule.HomePageModuleModule));
             moduleCatalog.AddModule(typeof(ToolbarModule.ToolBarModule));
-            moduleCatalog.AddModule(typeof(StatusbarModule.StatusbarModuleModule));
+            moduleCatalog.AddModule(typeof(StatusbarModule.StatusbarModule));
             moduleCatalog.AddModule(typeof(PlayBlackjackModule.PlayBlackjackModule));
             
         }

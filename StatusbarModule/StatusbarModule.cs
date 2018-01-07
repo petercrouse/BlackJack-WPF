@@ -8,12 +8,12 @@ using Shared;
 
 namespace StatusbarModule
 {
-    public class StatusbarModuleModule : IModule
+    public class StatusbarModule : IModule
     {
         private IRegionManager _regionManager;
         private IUnityContainer _container;
 
-        public StatusbarModuleModule(IUnityContainer container, IRegionManager regionManager)
+        public StatusbarModule(IUnityContainer container, IRegionManager regionManager)
         {
             _container = container;
             _regionManager = regionManager;

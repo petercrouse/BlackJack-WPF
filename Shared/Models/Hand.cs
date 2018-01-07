@@ -48,13 +48,5 @@ namespace Shared.Models
             CardsInHand.Clear();
         }
 
-        //public void SetHandToCardbackImages()
-        //{
-        //    foreach (var card in CardsInHand)
-        //    {
-        //        card.ImageSource = CardToImageConverter.CardImagePath("cb");
-        //    }
-        //}
-
     }
 }

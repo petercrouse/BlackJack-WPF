@@ -12,7 +12,7 @@ namespace Shared
         {
             public const string MainRegion = "MainRegion";
             public const string ToolbarRegion = "ToolbarRegion";
-            public const string StatusbarRegion = "StatusbarsRegion";
+            public const string StatusbarRegion = "StatusbarRegion";
         }
 
         public static class Views

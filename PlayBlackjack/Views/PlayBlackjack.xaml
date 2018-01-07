@@ -23,23 +23,19 @@
         <Style TargetType="Button">
             <Setter Property="Background"
                     Value="DarkGray"/>
-
         </Style>
 
         <converter:CardToImageConverter x:Key="cardToImageConverter" />
 
-            <ItemsPanelTemplate x:Key="CardItems">
-                <StackPanel Orientation="Horizontal" 
-                                    Background="Transparent"
-                                    Margin="20,0,0,0"/>
-            </ItemsPanelTemplate>
-
-        <DataTemplate DataType="{Binding Path=}">
+        <DataTemplate DataType="{x:Type card:Card}">
             <Image Source="{Binding Converter={StaticResource ResourceKey=cardToImageConverter}}" 
                        Height="96"
                        Width="72" />
-
         </DataTemplate>
+
+        <ItemsPanelTemplate x:Key="HorizontalPanel">
+            <StackPanel Orientation="Horizontal"/>
+        </ItemsPanelTemplate>
 
     </UserControl.Resources>
     <Grid>
@@ -134,18 +130,18 @@
                        FontSize="18"
                        Margin="0,20,20,0"/>
         </StackPanel>
+       
 
-        
 
-        <Grid Grid.Row="3"
-              Grid.Column="0"
-              Grid.ColumnSpan="4">
-            <ListView ItemsSource="{Binding PlayerHand.CardsInHand}"
-                 Background="Transparent"
-                 BorderBrush="Transparent">
-                
-            </ListView>
-        </Grid>
+        <ListView Name="PlayersHand"
+                  ItemsSource="{Binding PlayerHand.CardsInHand}"
+                  Background="Transparent"
+                  BorderBrush="Transparent"
+                  ItemsPanel="{StaticResource HorizontalPanel}" 
+                  Margin="20,0,0,0"
+                  Grid.Row="3"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="4"/>
 
         <TextBlock Text="{Binding MessageBoard}"
                    Grid.Row="4"
@@ -156,40 +152,61 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Left"/>
 
-        <Grid Grid.Row="6"
-              Grid.Column="1"
-              Grid.ColumnSpan="3">
-            <ListView ItemsSource="{Binding DealerHand.CardsInHand}"
-                 Background="Transparent"
-                  BorderBrush="Transparent">
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" 
-                                    Background="Transparent"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding ImageSource}"
-                               Height="96"
-                               Width="72"/>
+        <ListView Name="DealersHand"
+                  ItemsSource="{Binding DealerHand.CardsInHand}"
+                  Background="Transparent"
+                  BorderBrush="Transparent"
+                  ItemsPanel="{StaticResource HorizontalPanel}"
+                  Grid.Row="6"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="3"
+                  Visibility="Collapsed"/>
 
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+        <Grid Name="CardBack"
+              Grid.Row="6"
+              Grid.Column="1"
+              Grid.ColumnSpan="3"
+              Visibility="Collapsed">
+
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Shared;component/Resources/cb.png"
+                       Height="96"
+                       Width="72"/>
+                <Image Source="/Shared;component/Resources/cb.png"
+                       Height="96"
+                       Width="72"/>
+            </StackPanel>
         </Grid>
 
         <StackPanel Grid.Row="0"
-                    Grid.Column="8"
-                    Grid.RowSpan="10"
-                    Background="LightGray">
+                Grid.Column="8"
+                Grid.RowSpan="10"
+                Background="LightGray">
             <Button Content="New Game"
                     Command="{Binding NewGameCommand}">
-                
             </Button>
+            
             <Button Content="Deal Hand"
                     Command="{Binding DealHandsCommand}"
                     IsEnabled="{Binding DealHandsButtonVisible}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Name=CardBack}"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                            Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Name=DealersHand}"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                            Value="{x:Static Visibility.Collapsed}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
                 
             </Button>
             <Button Content="Hit" 
@@ -200,7 +217,25 @@
             <Button Content="Stay"
                     Command="{Binding StayCommand}"
                     IsEnabled="{Binding StayButtonVisible}">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Name=CardBack}"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                            Value="{x:Static Visibility.Collapsed}" />
 
+                                </ObjectAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference Name=DealersHand}"
+                                                               Storyboard.TargetProperty="Visibility">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0"
+                                                            Value="{x:Static Visibility.Visible}" />
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
             </Button>
             <Button Content="Shuffle Deck"
                     Command="{Binding ShuffleDeckCommand}"
