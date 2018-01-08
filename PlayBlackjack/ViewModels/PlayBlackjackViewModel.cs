@@ -199,15 +199,27 @@ namespace PlayBlackjackModule.ViewModels
             PlayerHandValue = PlayerHand.handValue();
             DealerHandValue = DealerHand.handValue();
 
-            while (DealerHandValue < 18)
+            bool dealerHas5CardsWithValueSmallerThan21 = false;
+            int count = DealerHand.CardsInHand.Count;
+            while (dealerHas5CardsWithValueSmallerThan21 == false && DealerHandValue < 18)
             {
                 DealerHand.AddCard(MyDeck.pick());
                 DealerHandValue = DealerHand.handValue();
+                count++;
+                if (count == 5 && DealerHandValue <= 21)
+                    dealerHas5CardsWithValueSmallerThan21 = true;
             }
 
-            string winner = (DealerHandValue >= PlayerHandValue && DealerHandValue <= 21) ? "Dealer wins!" : "Player wins!";
-            if (DealerHandValue == PlayerHandValue) winner = "It's a draw.";
+            string winner = (dealerHas5CardsWithValueSmallerThan21 == true || 
+                (DealerHandValue >= PlayerHandValue && DealerHandValue <= 21)) ? "Dealer wins!" : "Player wins!";
+
+            if (DealerHandValue == PlayerHandValue && dealerHas5CardsWithValueSmallerThan21 == false)
+            {
+                winner = "It's a draw.";
+            }
+
             MessageBoard = $"{winner}";
+
             if (winner == "Dealer wins!")
             {
                 DealerScore++;

@@ -17,20 +17,55 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Menu}">
-                        <Border BorderThickness="0">
+                        <Border BorderThickness="1">
                             <StackPanel ClipToBounds="True" 
                                         Orientation="Horizontal"
-                                        IsItemsHost="True"/>
+                                        IsItemsHost="True"
+                                        Background="Transparent"/>
+                            <Border.Background>
+                                <SolidColorBrush Color="maroon" />
+                            </Border.Background>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}"
+               TargetType="{x:Type Separator}">
+            <Setter Property="Height"
+                    Value="1" />
+            <Setter Property="Margin"
+                    Value="0,4,0,4" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Separator">
+                        <Border BorderThickness="1">
+                            <Border.BorderBrush>
+                                <SolidColorBrush Color="Black" />
+                            </Border.BorderBrush>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="MenuItem">
+            <Setter Property="Background"
+                    Value="maroon" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="Margin"
+                    Value="0" />
+        </Style>
+        
     </UserControl.Resources>
     
     <Grid>
-        <Menu Background="Transparent">
-            <MenuItem Header="_File">
+        <Menu Background="Maroon"
+              VerticalAlignment="Center"
+              Foreground="White">
+
+            <MenuItem Header="_File" >
                 <MenuItem Header="_Play Blackjack"
                           InputGestureText="Alt+P"
                           Command="{Binding NavigateToPlayBlackjackCommand}"/>
@@ -42,6 +77,7 @@
                           InputGestureText="Alt+X"
                           Command="{Binding ExitApplicationCommand}"/>
             </MenuItem>
+
         </Menu>
     </Grid>
 </UserControl>
