@@ -1,7 +1,5 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Regions;
-using Shared;
 
 namespace Blackjack.client.ViewModels
 {

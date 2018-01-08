@@ -1,16 +1,8 @@
-﻿using Prism.Commands;
-using Prism.Events;
-using Prism.Mvvm;
+﻿using Prism.Events;
 using Prism.Regions;
 using Shared.Events;
 using Shared.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace StatusbarModule.ViewModels
 {

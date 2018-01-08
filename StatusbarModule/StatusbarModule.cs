@@ -1,7 +1,6 @@
 ﻿using StatusbarModule.Views;
 using Prism.Modularity;
 using Prism.Regions;
-using System;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
 using Shared;

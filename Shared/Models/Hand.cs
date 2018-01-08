@@ -1,5 +1,4 @@
 ﻿using Prism.Mvvm;
-using Shared.Converters;
 using System.Collections.ObjectModel;
 
 namespace Shared.Models

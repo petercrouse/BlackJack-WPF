@@ -5,7 +5,6 @@ using Microsoft.Practices.Unity;
 using Prism.Unity;
 using PlayBlackjackModule.Views;
 using Shared;
-using Prism.Regions;
 using System.Windows.Controls;
 using HomePageModule.Views;
 using StatusbarModule.Views;
