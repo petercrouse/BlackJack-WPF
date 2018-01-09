@@ -6,29 +6,86 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200"
              xmlns:prism="http://prismlibrary.com/"
-             prism:ViewModelLocator.AutoWireViewModel="True" >
+             prism:ViewModelLocator.AutoWireViewModel="True">
 
     <UserControl.Resources>
-              
-        <Style TargetType="Border">
-            <Setter Property="CornerRadius"
-                    Value="50" />
-            <Setter Property="BorderBrush"
-                    Value="Black" />
-        </Style>
+
+        <ControlTemplate x:Key="ButtonTemplate1" TargetType="{x:Type Button}">
+            <Grid ClipToBounds="True" SnapsToDevicePixels="True">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualStateGroup.Transitions>
+                            <VisualTransition GeneratedDuration="0" To="MouseOver"/>
+                        </VisualStateGroup.Transitions>
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="border">
+                                    <EasingColorKeyFrame KeyTime="0" Value="#FF0E0E06"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderThickness)" Storyboard.TargetName="border">
+                                    <EasingThicknessKeyFrame KeyTime="0" Value="1"/>
+                                </ThicknessAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="border">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="border">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background)" Storyboard.TargetName="border">
+                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <SolidColorBrush Color="#FF8B8D93"/>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed"/>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Border x:Name="border" BorderBrush="Black" 
+                        BorderThickness="1" 
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch" 
+                        CornerRadius="50" 
+                        ClipToBounds="True" 
+                        SnapsToDevicePixels="True" 
+                        RenderTransformOrigin="0.5,0.5" Background="{TemplateBinding Background}">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                    <ContentPresenter 
+                                  VerticalAlignment="Center" 
+                                  ClipToBounds="True" 
+                                  UseLayoutRounding="False" 
+                                  Grid.IsSharedSizeScope="True" 
+                                  HorizontalAlignment="Center"/>
+                </Border>
+            </Grid>
+        </ControlTemplate>
     </UserControl.Resources>
 
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/HomePageModule;component/Resources/HomePageBackground.jpg" />
         </Grid.Background>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -59,7 +116,8 @@
                     FontSize="48"
                     Background="CornflowerBlue"
                     Foreground="White"
-                    Command="{Binding NavigateToPlayBlackjackCommand}"/>
+                    Command="{Binding NavigateToPlayBlackjackCommand}"
+                    Template="{DynamicResource ButtonTemplate1}"/>
 
     </Grid>
 </UserControl>
