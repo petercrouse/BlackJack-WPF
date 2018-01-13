@@ -46,7 +46,7 @@
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
                 <Border x:Name="border" BorderBrush="Black" 
-                        BorderThickness="1" 
+                        BorderThickness="5" 
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Stretch" 
                         CornerRadius="50" 
