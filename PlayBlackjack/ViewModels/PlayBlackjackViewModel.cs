@@ -178,7 +178,7 @@ namespace PlayBlackjackModule.ViewModels
                 DealerScore++;
                 endOfRound = true;
             }
-            if (PlayerHand.handValue() < 21 && PlayerHand.CardsInHand.Count >= 5)
+            if (PlayerHand.handValue() <= 21 && PlayerHand.CardsInHand.Count >= 5)
             {
                 MessageBoard = "Player wins!";
                 PlayerScore++;
