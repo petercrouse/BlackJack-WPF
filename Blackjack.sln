@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.client", "Blackjack.client\Blackjack.client.csproj", "{828E41F7-1FE3-4C94-8607-EDC9D86207AF}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBarModule", "ToolbarModule\ToolBarModule.csproj", "{673446FA-0FF7-4E2E-85DA-0D358FEE17ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusbarModule", "StatusbarModule\StatusbarModule.csproj", "{C78F9539-5FA2-4C91-86A8-138777AAF987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.models", "Blackjack.models\Blackjack.models.csproj", "{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{C78F9539-5FA2-4C91-86A8-138777AAF987}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C78F9539-5FA2-4C91-86A8-138777AAF987}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C78F9539-5FA2-4C91-86A8-138777AAF987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

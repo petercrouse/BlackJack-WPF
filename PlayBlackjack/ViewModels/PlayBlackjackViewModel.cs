@@ -126,7 +126,7 @@ namespace PlayBlackjackModule.ViewModels
             {
                 DealHandsButtonVisible = false;
                 ShuffleDeckButtonVisible = true;
-                MessageBoard = "There is not enough cards\n" +
+                MessageBoard = "There are not enough cards\n" +
                                "in the deck to play the hand.";
             }
             else
@@ -201,7 +201,7 @@ namespace PlayBlackjackModule.ViewModels
 
             bool dealerHas5CardsWithValueSmallerThan21 = false;
             int count = DealerHand.CardsInHand.Count;
-            while (dealerHas5CardsWithValueSmallerThan21 == false && DealerHandValue < 18)
+            while (!dealerHas5CardsWithValueSmallerThan21 && DealerHandValue < 18)
             {
                 DealerHand.AddCard(MyDeck.pick());
                 DealerHandValue = DealerHand.handValue();
@@ -210,10 +210,10 @@ namespace PlayBlackjackModule.ViewModels
                     dealerHas5CardsWithValueSmallerThan21 = true;
             }
 
-            string winner = (dealerHas5CardsWithValueSmallerThan21 == true || 
+            string winner = (dealerHas5CardsWithValueSmallerThan21 || 
                 (DealerHandValue >= PlayerHandValue && DealerHandValue <= 21)) ? "Dealer wins!" : "Player wins!";
 
-            if (DealerHandValue == PlayerHandValue && dealerHas5CardsWithValueSmallerThan21 == false)
+            if (DealerHandValue == PlayerHandValue && !dealerHas5CardsWithValueSmallerThan21)
             {
                 winner = "It's a draw.";
             }
