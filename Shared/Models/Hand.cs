@@ -29,7 +29,7 @@ namespace Shared.Models
 
             foreach(var card in CardsInHand)
             {
-                score += card.value();
+                score += card.Value();
                 if (card.IsAce())
                 {
                     ace = true;

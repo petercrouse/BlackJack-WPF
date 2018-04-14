@@ -24,7 +24,7 @@ namespace Shared.Models
             Name = name;
         }
 
-        public int value()
+        public int Value()
         {
             int value;
             var card = Name[0];
