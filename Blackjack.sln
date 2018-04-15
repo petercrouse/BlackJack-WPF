@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBarModule", "ToolbarMod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusbarModule", "StatusbarModule\StatusbarModule.csproj", "{C78F9539-5FA2-4C91-86A8-138777AAF987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.models", "Blackjack.models\Blackjack.models.csproj", "{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.core", "Blackjack.models\Blackjack.core.csproj", "{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
