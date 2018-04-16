@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusbarModule", "Statusba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.core", "Blackjack.models\Blackjack.core.csproj", "{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack.persistence", "BlackJack.persistence\BlackJack.persistence.csproj", "{80E8CE14-C54F-4253-803D-1192E892280F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E8CE14-C54F-4253-803D-1192E892280F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E8CE14-C54F-4253-803D-1192E892280F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E8CE14-C54F-4253-803D-1192E892280F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E8CE14-C54F-4253-803D-1192E892280F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

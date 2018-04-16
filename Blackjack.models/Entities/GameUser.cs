@@ -8,6 +8,7 @@ namespace Blackjack.models.Entities
         [Required]
         [MaxLength(10)]
         public string Alias { get; set; }
+
         public string Email { get; set; }
     }
 }
