@@ -15,11 +15,16 @@ namespace Blackjack.models.Entities
 
         [Required]
         public long Id { get; set; }
+
         [Required]
         public Guid ReferenceId { get; set; }
+
         [Required]
         public DataState DataState { get; set; }
+
         [Required]
         public DateTimeOffset CreatedDate { get; set; }
+
+        public DateTimeOffset? ModifiedDate { get; set; }
     }
 }
