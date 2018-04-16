@@ -3,10 +3,8 @@
 namespace Blackjack.models.Entities
 
 {
-    public class GameUser
+    public class GameUser : GameEntity
     {
-        [Required]
-        public int Id { get; set; }
         [Required]
         [MaxLength(10)]
         public string Alias { get; set; }

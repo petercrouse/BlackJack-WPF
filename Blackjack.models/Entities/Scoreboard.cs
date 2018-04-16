@@ -1,18 +1,15 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Blackjack.models.Entities
 {
-    public class Scoreboard
+    public class Scoreboard : GameEntity
     {
+        public virtual GameUser Player { get; set; }
         [Required]
-        public int Id { get; set; }
+        public long PlayerId { get; set; }
         [Required]
-        public GameUser GameUser { get; set; }
+        public int HighScore { get; set; }
         [Required]
-        public int Score { get; set; }
-        [Required]
-        public string Game { get; set; }
-        public DateTimeOffset Date { get; set; }
+        public string GameType { get; set; }
     }
 }
