@@ -7,7 +7,7 @@ namespace BlackJack.persistence
 {
     public class GameContext : DbContext, IDbContext
     {
-        public GameContext() : base("name=GameDB")
+        public GameContext() : base()
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<GameContext>());
             Database.SetInitializer<GameContext>(null);

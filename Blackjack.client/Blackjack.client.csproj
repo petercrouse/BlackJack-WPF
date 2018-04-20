@@ -129,6 +129,14 @@
     <PackageReference Include="Prism.Unity" Version="6.3.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Blackjack.models\Blackjack.core.csproj">
+      <Project>{1997d2c1-2e0a-4141-ab03-c71f4fcb8f82}</Project>
+      <Name>Blackjack.core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackJack.persistence\BlackJack.persistence.csproj">
+      <Project>{80E8CE14-C54F-4253-803D-1192E892280F}</Project>
+      <Name>BlackJack.persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HomePageModule\HomePageModule.csproj">
       <Project>{5181e0bb-82df-459e-bb85-a7bd00a09a7b}</Project>
       <Name>HomePageModule</Name>
@@ -253,6 +261,9 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

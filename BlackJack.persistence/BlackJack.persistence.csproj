@@ -51,7 +51,17 @@
     <Compile Include="GameContext.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Maps\GameEntityMap.cs" />
+    <Compile Include="Maps\GameUserMap.cs" />
+    <Compile Include="Maps\ScoreboardMap.cs" />
+    <Compile Include="Migrations\201804202110165_initial_migration.cs" />
+    <Compile Include="Migrations\201804202110165_initial_migration.Designer.cs">
+      <DependentUpon>201804202110165_initial_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration\MigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GameUserRepository.cs" />
+    <Compile Include="Repositories\ScoreboardRepository.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +73,11 @@
       <Project>{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}</Project>
       <Name>Blackjack.core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804202110165_initial_migration.resx">
+      <DependentUpon>201804202110165_initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
