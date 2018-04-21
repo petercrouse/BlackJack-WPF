@@ -54,9 +54,13 @@
     <Compile Include="Maps\GameEntityMap.cs" />
     <Compile Include="Maps\GameUserMap.cs" />
     <Compile Include="Maps\ScoreboardMap.cs" />
-    <Compile Include="Migrations\201804202110165_initial_migration.cs" />
-    <Compile Include="Migrations\201804202110165_initial_migration.Designer.cs">
-      <DependentUpon>201804202110165_initial_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201804212057216_InitialCreate.cs" />
+    <Compile Include="Migrations\201804212057216_InitialCreate.Designer.cs">
+      <DependentUpon>201804212057216_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804212138565_set_aliasLength_to_25.cs" />
+    <Compile Include="Migrations\201804212138565_set_aliasLength_to_25.Designer.cs">
+      <DependentUpon>201804212138565_set_aliasLength_to_25.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration\MigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,8 +79,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804202110165_initial_migration.resx">
-      <DependentUpon>201804202110165_initial_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804212057216_InitialCreate.resx">
+      <DependentUpon>201804212057216_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804212138565_set_aliasLength_to_25.resx">
+      <DependentUpon>201804212138565_set_aliasLength_to_25.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

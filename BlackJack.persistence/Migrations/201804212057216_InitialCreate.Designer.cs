@@ -7,13 +7,13 @@ namespace BlackJack.persistence.Migrations.Configuration
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initial_migration : IMigrationMetadata
+    public sealed partial class InitialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initial_migration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804202110165_initial_migration"; }
+            get { return "201804212057216_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

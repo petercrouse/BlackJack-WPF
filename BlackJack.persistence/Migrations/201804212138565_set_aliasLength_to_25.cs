@@ -3,14 +3,16 @@ namespace BlackJack.persistence.Migrations.Configuration
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial_migration : DbMigration
+    public partial class set_aliasLength_to_25 : DbMigration
     {
         public override void Up()
         {
+            AlterColumn("dbo.GameUser", "Alias", c => c.String(nullable: false, maxLength: 25));
         }
         
         public override void Down()
         {
+            AlterColumn("dbo.GameUser", "Alias", c => c.String(nullable: false, maxLength: 10));
         }
     }
 }
