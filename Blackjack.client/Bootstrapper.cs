@@ -8,6 +8,9 @@ using Shared;
 using System.Windows.Controls;
 using HomePageModule.Views;
 using StatusbarModule.Views;
+using BlackJack.persistence;
+using BlackJack.persistence.Repositories;
+using Blackjack.models.Entities;
 
 namespace Blackjack.client
 {
@@ -36,6 +39,9 @@ namespace Blackjack.client
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
+            //Container.RegisterType<IDbContextFactory<GameContext>, ContextFactory>();
+            Container.RegisterType<IRepository<GameUser>, GameUserRepository>();
+            Container.RegisterType<IRepository<Scoreboard>, ScoreboardRepository>();
 
             Container.RegisterType(typeof(object), typeof(PlayBlackjack), Constants.Views.PlayBlackjack);
             Container.RegisterType(typeof(object), typeof(HomePage), Constants.Views.HomePage);
