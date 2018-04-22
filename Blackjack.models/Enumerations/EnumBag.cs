@@ -8,5 +8,10 @@
             Active = 1,
             Deleted = 2
         }
+
+        public enum GameName
+        {
+            Blackjack = 0
+        }
     }
 }

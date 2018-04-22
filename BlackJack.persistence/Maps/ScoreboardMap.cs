@@ -12,7 +12,7 @@ namespace BlackJack.persistence.Maps
         public ScoreboardMap() : base("Scoreboard")
         {
             Property(x => x.HighScore).IsRequired();
-            Property(x => x.GameType).IsRequired();
+            Property(x => x.GameName).IsRequired();
             HasRequired(x => x.Player);
         }
     }

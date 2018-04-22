@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static Blackjack.models.Enumerations.EnumBag;
 
 namespace Blackjack.models.Entities
 {
@@ -10,6 +11,6 @@ namespace Blackjack.models.Entities
         [Required]
         public int HighScore { get; set; }
         [Required]
-        public string GameType { get; set; }
+        public GameName GameName { get; set; }
     }
 }
