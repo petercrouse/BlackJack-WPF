@@ -1,9 +1,9 @@
-﻿using Blackjack.models.Entities;
+﻿using Game.Core.Entities;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using static Blackjack.models.Enumerations.EnumBag;
+using static Game.Core.Enumerations.EnumBag;
 
-namespace BlackJack.persistence.Migrations.Configuration
+namespace Game.Persistence.Migrations.Configuration
 {
     internal sealed class MigrationConfiguration : DbMigrationsConfiguration<GameContext>
     {

@@ -1,8 +1,7 @@
-namespace BlackJack.persistence.Migrations.Configuration
+namespace Game.Persistence.Migrations.Configuration
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class set_aliasLength_to_25 : DbMigration
     {
         public override void Up()

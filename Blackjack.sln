@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.client", "Blackjack.client\Blackjack.client.csproj", "{828E41F7-1FE3-4C94-8607-EDC9D86207AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Client", "Blackjack.client\Game.Client.csproj", "{828E41F7-1FE3-4C94-8607-EDC9D86207AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{BE39ADD5-7254-4FBD-B938-BDA566E3AC88}"
 EndProject
@@ -17,9 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolBarModule", "ToolbarMod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatusbarModule", "StatusbarModule\StatusbarModule.csproj", "{C78F9539-5FA2-4C91-86A8-138777AAF987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blackjack.core", "Blackjack.models\Blackjack.core.csproj", "{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Core", "Blackjack.models\Game.Core.csproj", "{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackJack.persistence", "BlackJack.persistence\BlackJack.persistence.csproj", "{80E8CE14-C54F-4253-803D-1192E892280F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Persistence", "BlackJack.persistence\Game.Persistence.csproj", "{80E8CE14-C54F-4253-803D-1192E892280F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Framework", "BlackJack.Framework\Game.Framework.csproj", "{30142073-32D9-4550-AB9D-8807DC79AEED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{80E8CE14-C54F-4253-803D-1192E892280F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80E8CE14-C54F-4253-803D-1192E892280F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80E8CE14-C54F-4253-803D-1192E892280F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30142073-32D9-4550-AB9D-8807DC79AEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30142073-32D9-4550-AB9D-8807DC79AEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30142073-32D9-4550-AB9D-8807DC79AEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30142073-32D9-4550-AB9D-8807DC79AEED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

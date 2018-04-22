@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Blackjack.models.Entities
+namespace Game.Core.Entities
 
 {
     public class GameUser : GameEntity

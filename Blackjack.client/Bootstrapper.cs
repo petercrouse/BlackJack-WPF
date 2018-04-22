@@ -1,5 +1,4 @@
-﻿using Blackjack.client.Views;
-using System.Windows;
+﻿using System.Windows;
 using Prism.Modularity;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
@@ -8,11 +7,13 @@ using Shared;
 using System.Windows.Controls;
 using HomePageModule.Views;
 using StatusbarModule.Views;
-using BlackJack.persistence;
-using BlackJack.persistence.Repositories;
-using Blackjack.models.Entities;
+using Game.Client.Views;
+using Game.Core.Entities;
+using Game.Persistence;
+using Game.Persistence.Repositories;
+using System.Data.Entity.Infrastructure;
 
-namespace Blackjack.client
+namespace Game.Client
 {
     class Bootstrapper : UnityBootstrapper
     {
@@ -39,7 +40,7 @@ namespace Blackjack.client
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();
-            //Container.RegisterType<IDbContextFactory<GameContext>, ContextFactory>();
+            Container.RegisterType<IDbContextFactory<GameContext>, ContextFactory>();
             Container.RegisterType<IRepository<GameUser>, GameUserRepository>();
             Container.RegisterType<IRepository<Scoreboard>, ScoreboardRepository>();
 

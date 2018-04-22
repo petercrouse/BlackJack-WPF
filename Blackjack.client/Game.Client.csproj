@@ -7,8 +7,8 @@
     <ProjectGuid>{828E41F7-1FE3-4C94-8607-EDC9D86207AF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Blackjack.client</RootNamespace>
-    <AssemblyName>Blackjack.client</AssemblyName>
+    <RootNamespace>Game.Client</RootNamespace>
+    <AssemblyName>Game.Client</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -67,7 +67,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -129,13 +131,17 @@
     <PackageReference Include="Prism.Unity" Version="6.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Blackjack.models\Blackjack.core.csproj">
-      <Project>{1997d2c1-2e0a-4141-ab03-c71f4fcb8f82}</Project>
-      <Name>Blackjack.core</Name>
+    <ProjectReference Include="..\BlackJack.Framework\Game.Framework.csproj">
+      <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
+      <Name>Game.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BlackJack.persistence\BlackJack.persistence.csproj">
+    <ProjectReference Include="..\Blackjack.models\Game.Core.csproj">
+      <Project>{1997d2c1-2e0a-4141-ab03-c71f4fcb8f82}</Project>
+      <Name>Game.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlackJack.persistence\Game.Persistence.csproj">
       <Project>{80E8CE14-C54F-4253-803D-1192E892280F}</Project>
-      <Name>BlackJack.persistence</Name>
+      <Name>Game.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\HomePageModule\HomePageModule.csproj">
       <Project>{5181e0bb-82df-459e-bb85-a7bd00a09a7b}</Project>

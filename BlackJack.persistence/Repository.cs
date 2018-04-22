@@ -1,15 +1,13 @@
-﻿using Blackjack.models.Entities;
-using Blackjack.models.Enumerations;
+﻿using Game.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using static Game.Core.Enumerations.EnumBag;
 
-namespace BlackJack.persistence
+namespace Game.Persistence
 {
     public class Repository<TEntity> : IDisposable where TEntity : GameEntity
     {
@@ -29,7 +27,7 @@ namespace BlackJack.persistence
             if (softDelete)
             {
                 entity.ModifiedDate = DateTimeOffset.Now;
-                entity.DataState = EnumBag.DataState.Deleted;
+                entity.DataState = DataState.Deleted;
             }
             else
             {
@@ -57,7 +55,7 @@ namespace BlackJack.persistence
 
         public virtual void Edit(TEntity entity)
         {
-            if(entity.DataState == EnumBag.DataState.Active)
+            if(entity.DataState == DataState.Active)
             {
                 entity.ModifiedDate = DateTimeOffset.Now;
             }

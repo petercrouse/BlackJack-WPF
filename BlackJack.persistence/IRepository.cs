@@ -1,9 +1,9 @@
-﻿using Blackjack.models.Entities;
+﻿using Game.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace BlackJack.persistence
+namespace Game.Persistence
 {
     public interface IRepository<TEntity> where TEntity : GameEntity
     {

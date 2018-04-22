@@ -7,8 +7,8 @@
     <ProjectGuid>{80E8CE14-C54F-4253-803D-1192E892280F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlackJack.persistence</RootNamespace>
-    <AssemblyName>BlackJack.persistence</AssemblyName>
+    <RootNamespace>Game.Persistence</RootNamespace>
+    <AssemblyName>Game.Persistence</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -77,9 +77,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Blackjack.models\Blackjack.core.csproj">
+    <ProjectReference Include="..\Blackjack.models\Game.Core.csproj">
       <Project>{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}</Project>
-      <Name>Blackjack.core</Name>
+      <Name>Game.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

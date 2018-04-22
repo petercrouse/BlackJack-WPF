@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Blackjack.models.Entities;
+﻿using Game.Core.Entities;
 
-namespace BlackJack.persistence.Maps
+namespace Game.Persistence.Maps
 {
     public class ScoreboardMap : GameEntityMap<Scoreboard>
     {

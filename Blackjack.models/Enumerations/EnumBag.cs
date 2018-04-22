@@ -1,4 +1,4 @@
-﻿namespace Blackjack.models.Enumerations
+﻿namespace Game.Core.Enumerations
 {
     public static class EnumBag
     {

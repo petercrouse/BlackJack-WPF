@@ -1,13 +1,10 @@
-﻿using Blackjack.models.Entities;
-using Blackjack.models.Enumerations;
+﻿using Game.Core.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static Game.Core.Enumerations.EnumBag;
 
-namespace BlackJack.persistence.Repositories
+namespace Game.Persistence.Repositories
 {
     public class ScoreboardRepository : Repository<Scoreboard>, IRepository<Scoreboard>
     {
@@ -17,9 +14,9 @@ namespace BlackJack.persistence.Repositories
         }
         public void Add(Scoreboard entity)
         {
-            if (entity.DataState == EnumBag.DataState.New)
+            if (entity.DataState == DataState.New)
             {
-                entity.DataState = EnumBag.DataState.Active;
+                entity.DataState = DataState.Active;
                 entity.ModifiedDate = DateTimeOffset.Now;
                 Context.Set<Scoreboard>().Add(entity);
             }

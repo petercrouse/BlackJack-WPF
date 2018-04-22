@@ -1,12 +1,7 @@
-﻿using Blackjack.models.Entities;
-using System;
-using System.Collections.Generic;
+﻿using Game.Core.Entities;
 using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BlackJack.persistence.Maps
+namespace Game.Persistence.Maps
 {
     public abstract class GameEntityMap<TEntity> : EntityTypeConfiguration<TEntity>
         where TEntity : GameEntity

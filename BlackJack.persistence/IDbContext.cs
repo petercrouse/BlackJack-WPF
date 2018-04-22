@@ -1,8 +1,8 @@
-﻿using Blackjack.models.Entities;
-using System.Data.Entity.Infrastructure;
+﻿using System.Data.Entity.Infrastructure;
 using System.Data.Entity;
+using Game.Core.Entities;
 
-namespace BlackJack.persistence
+namespace Game.Persistence
 {
     public interface IDbContext
     {

@@ -1,15 +1,14 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Blackjack.models")]
+[assembly: AssemblyTitle("Game.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Capitec Bank")]
-[assembly: AssemblyProduct("Blackjack.models")]
+[assembly: AssemblyProduct("Game.Core")]
 [assembly: AssemblyCopyright("Copyright © Capitec Bank 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
