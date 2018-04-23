@@ -1,8 +1,6 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using static Game.Core.Enumerations.EnumBag;
 
-namespace Game.Core.Entities
+namespace Game.Models.Entities
 {
     public class GameEntity : IEntity
     {

@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Game.Framework.Logging;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
 using Shared;
@@ -10,7 +11,7 @@ namespace HomePageModule.ViewModels
     {
         public DelegateCommand NavigateToPlayBlackjackCommand { get; set; }
 
-        public HomePageViewModel(IRegionManager regionManager, IEventAggregator eventAggregator): base(regionManager, eventAggregator)
+        public HomePageViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(regionManager, eventAggregator, logger)
         {
             NavigateToPlayBlackjackCommand = new DelegateCommand(NavigateToPlayBlackjack);
         }

@@ -41,12 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\GameEntity.cs" />
-    <Compile Include="Entities\GameUser.cs" />
-    <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Enumerations\EnumBag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\Scoreboard.cs" />
     <Compile Include="Requests\IValidateableRequest.cs" />
     <Compile Include="Requests\ValidateableRequest.cs" />
     <Compile Include="Response\INotificationResponse.cs" />

@@ -1,8 +1,4 @@
-﻿
-
-using Game.Core.Entities;
-
-namespace Game.Persistence.Maps
+﻿namespace Game.Persistence.Maps
 {
     public class GameUserMap : GameEntityMap<GameUser>
     {

@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using Game.Framework.Logging;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
 using Shared;
@@ -13,7 +14,7 @@ namespace ToolbarModule.ViewModels
         public DelegateCommand NavigateToHomePageCommand { get; set; }
         public DelegateCommand ExitApplicationCommand { get; set; }
 
-        public ToolBarViewModel(IRegionManager regionManager, IEventAggregator eventAggregator) : base(regionManager, eventAggregator)
+        public ToolBarViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(regionManager, eventAggregator, logger)
         {
             NavigateToPlayBlackjackCommand = new DelegateCommand(PlayBlackjackGame);
             NavigateToHomePageCommand = new DelegateCommand(NavigateToHomePage);

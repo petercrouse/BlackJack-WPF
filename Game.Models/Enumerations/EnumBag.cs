@@ -1,4 +1,4 @@
-﻿namespace Game.Core.Enumerations
+﻿namespace Game.Models.Enumerations
 {
     public static class EnumBag
     {

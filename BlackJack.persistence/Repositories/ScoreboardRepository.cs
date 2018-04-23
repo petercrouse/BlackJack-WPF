@@ -1,5 +1,4 @@
-﻿using Game.Core.Entities;
-using System;
+﻿using System;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using static Game.Core.Enumerations.EnumBag;

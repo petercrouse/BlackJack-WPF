@@ -1,7 +1,6 @@
 ﻿using System;
-using static Game.Core.Enumerations.EnumBag;
 
-namespace Game.Core.Entities
+namespace Game.Models.Entities
 {
     public interface IEntity
     {
