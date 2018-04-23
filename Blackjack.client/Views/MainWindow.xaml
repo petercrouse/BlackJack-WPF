@@ -1,4 +1,4 @@
-﻿<Window x:Class="Blackjack.client.Views.MainWindow"
+﻿<Window x:Class="Game.Client.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"

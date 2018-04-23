@@ -1,12 +1,12 @@
-﻿using System.Data.Entity;
+﻿using Game.Core.Entities;
+using Game.Persistence.Maps;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.Validation;
 using System.Linq;
-using Blackjack.models.Entities;
-using BlackJack.persistence.Maps;
 
-namespace BlackJack.persistence
+namespace Game.Persistence
 {
     public class GameContext : DbContext, IDbContext
     {

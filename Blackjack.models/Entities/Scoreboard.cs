@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using static Game.Core.Enumerations.EnumBag;
 
-namespace Blackjack.models.Entities
+namespace Game.Core.Entities
 {
     public class Scoreboard : GameEntity
     {
@@ -10,6 +11,6 @@ namespace Blackjack.models.Entities
         [Required]
         public int HighScore { get; set; }
         [Required]
-        public string GameType { get; set; }
+        public GameName GameName { get; set; }
     }
 }

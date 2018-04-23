@@ -1,7 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 
-namespace Blackjack.client.ViewModels
+namespace Game.Client.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {

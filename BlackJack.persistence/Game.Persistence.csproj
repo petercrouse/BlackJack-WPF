@@ -7,8 +7,8 @@
     <ProjectGuid>{80E8CE14-C54F-4253-803D-1192E892280F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlackJack.persistence</RootNamespace>
-    <AssemblyName>BlackJack.persistence</AssemblyName>
+    <RootNamespace>Game.Persistence</RootNamespace>
+    <AssemblyName>Game.Persistence</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201804212138565_set_aliasLength_to_25.Designer.cs">
       <DependentUpon>201804212138565_set_aliasLength_to_25.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804220956167_changed_GameType_to_GameName_Enum_inTableScoreboard.cs" />
+    <Compile Include="Migrations\201804220956167_changed_GameType_to_GameName_Enum_inTableScoreboard.Designer.cs">
+      <DependentUpon>201804220956167_changed_GameType_to_GameName_Enum_inTableScoreboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration\MigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GameUserRepository.cs" />
@@ -73,9 +77,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Blackjack.models\Blackjack.core.csproj">
+    <ProjectReference Include="..\Blackjack.models\Game.Core.csproj">
       <Project>{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}</Project>
-      <Name>Blackjack.core</Name>
+      <Name>Game.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804212138565_set_aliasLength_to_25.resx">
       <DependentUpon>201804212138565_set_aliasLength_to_25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804220956167_changed_GameType_to_GameName_Enum_inTableScoreboard.resx">
+      <DependentUpon>201804220956167_changed_GameType_to_GameName_Enum_inTableScoreboard.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

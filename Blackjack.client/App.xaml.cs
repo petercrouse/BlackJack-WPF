@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Blackjack.client
+namespace Game.Client
 {
     /// <summary>
     /// Interaction logic for App.xaml

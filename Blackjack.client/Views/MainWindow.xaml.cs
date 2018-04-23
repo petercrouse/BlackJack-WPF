@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Blackjack.client.Views
+namespace Game.Client.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

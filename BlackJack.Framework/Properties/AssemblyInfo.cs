@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Game.Persistence")]
+[assembly: AssemblyTitle("Game.Framework")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Game.Persistence")]
-[assembly: AssemblyCopyright("Copyright ©  2018")]
+[assembly: AssemblyCompany("Capitec Bank")]
+[assembly: AssemblyProduct("Game.Framework")]
+[assembly: AssemblyCopyright("Copyright © Capitec Bank 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("80e8ce14-c54f-4253-803d-1192e892280f")]
+[assembly: Guid("30142073-32d9-4550-ab9d-8807dc79aeed")]
 
 // Version information for an assembly consists of the following four values:
 //

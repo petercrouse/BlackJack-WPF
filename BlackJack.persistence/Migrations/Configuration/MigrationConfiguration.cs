@@ -1,13 +1,9 @@
-﻿using Blackjack.models.Entities;
-using Blackjack.models.Enumerations;
-using System;
-using System.Collections.Generic;
+﻿using Game.Core.Entities;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static Game.Core.Enumerations.EnumBag;
 
-namespace BlackJack.persistence.Migrations.Configuration
+namespace Game.Persistence.Migrations.Configuration
 {
     internal sealed class MigrationConfiguration : DbMigrationsConfiguration<GameContext>
     {
@@ -29,16 +25,16 @@ namespace BlackJack.persistence.Migrations.Configuration
                 {
                     Alias = "BoomStraat21",
                     Email = "pacrouse@gmail.com",
-                    DataState = EnumBag.DataState.Active
+                    DataState = DataState.Active
                 };
                 context.Set<GameUser>().Add(dummyUser);
 
                 context.Set<Scoreboard>().Add(new Scoreboard
                 {
                     PlayerId = dummyUser.Id,
-                    GameType = "Blackjack",
+                    GameName = GameName.Blackjack,
                     HighScore = 10,
-                    DataState = EnumBag.DataState.Active
+                    DataState = DataState.Active
                 });
 
                 context.SaveChanges();
