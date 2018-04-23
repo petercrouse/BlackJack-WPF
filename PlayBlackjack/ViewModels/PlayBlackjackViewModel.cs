@@ -5,6 +5,7 @@ using Shared.ViewModels;
 using Prism.Events;
 using Shared.Models;
 using Shared.Events;
+using Game.Framework.Logging;
 
 namespace PlayBlackjackModule.ViewModels
 {
@@ -97,7 +98,7 @@ namespace PlayBlackjackModule.ViewModels
 
         #endregion
 
-        public PlayBlackjackViewModel(IRegionManager regionManager, IEventAggregator eventAggregator): base(regionManager, eventAggregator)
+        public PlayBlackjackViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(regionManager, eventAggregator, logger)
         {
             PlayerHand = new Hand();
             DealerHand = new Hand();

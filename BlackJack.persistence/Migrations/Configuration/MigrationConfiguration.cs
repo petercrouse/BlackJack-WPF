@@ -1,7 +1,7 @@
-﻿using Game.Core.Entities;
+﻿using Game.Models.Entities;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using static Game.Core.Enumerations.EnumBag;
+using static Game.Models.Enumerations.EnumBag;
 
 namespace Game.Persistence.Migrations.Configuration
 {

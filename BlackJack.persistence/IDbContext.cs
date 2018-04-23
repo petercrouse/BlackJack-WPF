@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.Infrastructure;
 using System.Data.Entity;
-using Game.Core.Entities;
+using Game.Models.Entities;
 
 namespace Game.Persistence
 {

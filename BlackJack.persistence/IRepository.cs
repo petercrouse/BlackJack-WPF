@@ -1,4 +1,4 @@
-﻿using Game.Core.Entities;
+﻿using Game.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

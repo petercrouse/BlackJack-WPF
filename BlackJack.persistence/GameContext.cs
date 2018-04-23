@@ -1,4 +1,4 @@
-﻿using Game.Core.Entities;
+﻿using Game.Models.Entities;
 using Game.Persistence.Maps;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;

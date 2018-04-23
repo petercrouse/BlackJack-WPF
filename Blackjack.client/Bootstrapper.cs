@@ -1,17 +1,18 @@
-﻿using System.Windows;
-using Prism.Modularity;
-using Microsoft.Practices.Unity;
-using Prism.Unity;
-using PlayBlackjackModule.Views;
-using Shared;
-using System.Windows.Controls;
-using HomePageModule.Views;
-using StatusbarModule.Views;
-using Game.Client.Views;
-using Game.Core.Entities;
+﻿using Game.Client.Views;
+using Game.Framework.Logging;
+using Game.Models.Entities;
 using Game.Persistence;
 using Game.Persistence.Repositories;
+using HomePageModule.Views;
+using Microsoft.Practices.Unity;
+using PlayBlackjackModule.Views;
+using Prism.Modularity;
+using Prism.Unity;
+using Shared;
+using StatusbarModule.Views;
 using System.Data.Entity.Infrastructure;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace Game.Client
 {
@@ -34,7 +35,7 @@ namespace Game.Client
             moduleCatalog.AddModule(typeof(ToolbarModule.ToolBarModule));
             moduleCatalog.AddModule(typeof(StatusbarModule.StatusbarModule));
             moduleCatalog.AddModule(typeof(PlayBlackjackModule.PlayBlackjackModule));
-            
+
         }
 
         protected override void ConfigureContainer()
@@ -43,6 +44,7 @@ namespace Game.Client
             Container.RegisterType<IDbContextFactory<GameContext>, ContextFactory>();
             Container.RegisterType<IRepository<GameUser>, GameUserRepository>();
             Container.RegisterType<IRepository<Scoreboard>, ScoreboardRepository>();
+            Container.RegisterType<ILogger, Logger>();
 
             Container.RegisterType(typeof(object), typeof(PlayBlackjack), Constants.Views.PlayBlackjack);
             Container.RegisterType(typeof(object), typeof(HomePage), Constants.Views.HomePage);

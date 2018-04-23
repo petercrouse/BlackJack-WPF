@@ -249,5 +249,11 @@
   <ItemGroup>
     <Resource Include="Resources\ts.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlackJack.Framework\Game.Framework.csproj">
+      <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
+      <Name>Game.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
