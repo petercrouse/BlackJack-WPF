@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Game.Models.Entities;
+using System;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using static Game.Core.Enumerations.EnumBag;
+using static Game.Models.Enumerations.EnumBag;
 
 namespace Game.Persistence.Repositories
 {

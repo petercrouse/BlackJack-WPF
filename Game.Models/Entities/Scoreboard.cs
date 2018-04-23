@@ -1,4 +1,7 @@
-﻿namespace Game.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using static Game.Models.Enumerations.EnumBag;
+
+namespace Game.Models.Entities
 {
     public class Scoreboard : GameEntity
     {

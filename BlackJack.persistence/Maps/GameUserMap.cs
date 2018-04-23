@@ -1,4 +1,6 @@
-﻿namespace Game.Persistence.Maps
+﻿using Game.Models.Entities;
+
+namespace Game.Persistence.Maps
 {
     public class GameUserMap : GameEntityMap<GameUser>
     {

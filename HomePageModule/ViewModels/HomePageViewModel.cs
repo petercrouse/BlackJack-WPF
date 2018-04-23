@@ -14,6 +14,7 @@ namespace HomePageModule.ViewModels
         public HomePageViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(regionManager, eventAggregator, logger)
         {
             NavigateToPlayBlackjackCommand = new DelegateCommand(NavigateToPlayBlackjack);
+            
         }
 
         private void NavigateToPlayBlackjack()

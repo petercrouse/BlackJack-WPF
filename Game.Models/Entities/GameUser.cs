@@ -1,4 +1,6 @@
-﻿namespace Game.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Game.Models.Entities
 
 {
     public class GameUser : GameEntity

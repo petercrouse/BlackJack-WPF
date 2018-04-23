@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using static Game.Models.Enumerations.EnumBag;
 
 namespace Game.Models.Entities
 {

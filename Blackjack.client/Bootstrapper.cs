@@ -1,6 +1,6 @@
 ﻿using Game.Client.Views;
-using Game.Core.Entities;
 using Game.Framework.Logging;
+using Game.Models.Entities;
 using Game.Persistence;
 using Game.Persistence.Repositories;
 using HomePageModule.Views;

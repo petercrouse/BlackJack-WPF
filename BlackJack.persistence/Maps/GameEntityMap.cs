@@ -1,4 +1,5 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Game.Models.Entities;
+using System.Data.Entity.ModelConfiguration;
 
 namespace Game.Persistence.Maps
 {
