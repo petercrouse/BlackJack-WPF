@@ -1,4 +1,5 @@
 ﻿using Game.Client.Views;
+using Game.Core.System;
 using Game.Framework.Logging;
 using Game.Models.Entities;
 using Game.Persistence;
@@ -44,7 +45,10 @@ namespace Game.Client
             Container.RegisterType<IDbContextFactory<GameContext>, ContextFactory>();
             Container.RegisterType<IRepository<GameUser>, GameUserRepository>();
             Container.RegisterType<IRepository<Scoreboard>, ScoreboardRepository>();
+
             Container.RegisterType<ILogger, Logger>();
+
+            Container.RegisterType<ISystemService, SystemService>();
 
             Container.RegisterType(typeof(object), typeof(PlayBlackjack), Constants.Views.PlayBlackjack);
             Container.RegisterType(typeof(object), typeof(HomePage), Constants.Views.HomePage);
