@@ -47,6 +47,8 @@
     <Compile Include="Response\INotificationResponse.cs" />
     <Compile Include="Response\ServiceResponse.cs" />
     <Compile Include="Services\ServiceManager.cs" />
+    <Compile Include="System\ISystemService.cs" />
+    <Compile Include="System\SystemService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BlackJack.Framework\Game.Framework.csproj">
