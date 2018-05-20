@@ -1,5 +1,9 @@
-﻿using Prism.Commands;
+﻿using Game.Framework.Logging;
+using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
+using Prism.Regions;
+using Shared.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +12,33 @@ using System.Threading.Tasks;
 
 namespace LoginModule.ViewModels
 {
-    public class LoginViewModel : BindableBase
+    public class LoginViewModel : GameViewModel
     {
-        private string _message;
-        public string Message
+        public LoginViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(regionManager, eventAggregator, logger)
         {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
+            SignInCommand = new DelegateCommand(SignIn);
         }
 
-        public LoginViewModel()
+        string _username;
+        string _password;
+
+        public string Username
         {
-            Message = "View A from your Prism Module";
+            get { return _username; }
+            set { SetProperty(ref _username, value); }
+        }
+
+        public string Password
+        {
+            get { return _password; }
+            set { SetProperty(ref _password, value); }
+        }
+
+        public DelegateCommand SignInCommand { get; }
+
+        private void SignIn()
+        {
+            throw new NotImplementedException();
         }
     }
 }
