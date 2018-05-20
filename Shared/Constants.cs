@@ -15,6 +15,7 @@
             public const string HomePage = "HomePage";
             public const string ToolBar = "ToolBar";
             public const string Statusbar = "Statusbar";
+            public const string Login = "Login";
         }
     }
 }

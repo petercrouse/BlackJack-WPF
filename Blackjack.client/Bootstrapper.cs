@@ -5,6 +5,7 @@ using Game.Models.Entities;
 using Game.Persistence;
 using Game.Persistence.Repositories;
 using HomePageModule.Views;
+using LoginModule.Views;
 using Microsoft.Practices.Unity;
 using PlayBlackjackModule.Views;
 using Prism.Modularity;
@@ -32,11 +33,11 @@ namespace Game.Client
         protected override void ConfigureModuleCatalog()
         {
             var moduleCatalog = (ModuleCatalog)ModuleCatalog;
+            moduleCatalog.AddModule(typeof(LoginModule.LoginModuleModule));
             moduleCatalog.AddModule(typeof(HomePageModule.HomePageModuleModule));
             moduleCatalog.AddModule(typeof(ToolbarModule.ToolBarModule));
             moduleCatalog.AddModule(typeof(StatusbarModule.StatusbarModule));
             moduleCatalog.AddModule(typeof(PlayBlackjackModule.PlayBlackjackModule));
-
         }
 
         protected override void ConfigureContainer()
@@ -54,6 +55,7 @@ namespace Game.Client
             Container.RegisterType(typeof(object), typeof(HomePage), Constants.Views.HomePage);
             Container.RegisterType(typeof(object), typeof(ToolBar), Constants.Views.ToolBar);
             Container.RegisterType(typeof(object), typeof(Statusbar), Constants.Views.Statusbar);
+            Container.RegisterType(typeof(object), typeof(Login), Constants.Views.Login);
         }
 
     }

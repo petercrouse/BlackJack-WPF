@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Framework", "BlackJack
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Models", "Game.Models\Game.Models.csproj", "{77ACACC3-F82D-4310-90F4-EAD39A99905C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginModule", "LoginModule\LoginModule.csproj", "{56E69FF7-0DA4-4AB4-ADDF-5AAC65FEA5C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{77ACACC3-F82D-4310-90F4-EAD39A99905C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77ACACC3-F82D-4310-90F4-EAD39A99905C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77ACACC3-F82D-4310-90F4-EAD39A99905C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E69FF7-0DA4-4AB4-ADDF-5AAC65FEA5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E69FF7-0DA4-4AB4-ADDF-5AAC65FEA5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E69FF7-0DA4-4AB4-ADDF-5AAC65FEA5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E69FF7-0DA4-4AB4-ADDF-5AAC65FEA5C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{5181E0BB-82DF-459E-BB85-A7BD00A09A7B} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
 		{673446FA-0FF7-4E2E-85DA-0D358FEE17ED} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
 		{C78F9539-5FA2-4C91-86A8-138777AAF987} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
+		{56E69FF7-0DA4-4AB4-ADDF-5AAC65FEA5C1} = {BE39ADD5-7254-4FBD-B938-BDA566E3AC88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DBEC33F-62BA-44B9-9778-AF452E91CF91}
