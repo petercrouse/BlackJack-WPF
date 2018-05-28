@@ -47,6 +47,8 @@
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\Scoreboard.cs" />
     <Compile Include="Enumerations\EnumBag.cs" />
+    <Compile Include="Constants\ConnectionNames.cs" />
+    <Compile Include="Constants\UserLoginResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

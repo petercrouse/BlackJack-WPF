@@ -13,5 +13,10 @@
         {
             Blackjack = 0
         }
+
+        public enum UserLoginResult
+        {
+            GivenName = 0
+        }
     }
 }

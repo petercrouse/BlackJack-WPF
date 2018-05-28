@@ -173,7 +173,7 @@
       <Name>HomePageModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\LoginModule\LoginModule.csproj">
-      <Project>{56E69FF7-0DA4-4AB4-ADDF-5AAC65FEA5C1}</Project>
+      <Project>{56e69ff7-0da4-4ab4-addf-5aac65fea5c1}</Project>
       <Name>LoginModule</Name>
     </ProjectReference>
     <ProjectReference Include="..\PlayBlackjack\PlayBlackjackModule.csproj">

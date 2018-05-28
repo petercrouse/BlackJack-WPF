@@ -2,6 +2,7 @@
 using Game.Core.System;
 using Game.Framework.Logging;
 using Game.Framework.Utilities;
+using Game.Models.Dto;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -56,6 +57,11 @@ namespace Shared.ViewModels
         public static class State
         {
             public static string LoggedInUser { get; set; }
+        }
+
+        public static class StateBag
+        {
+            public static GameUserDto LoggedInUser { get; set; }
         }
     }
 }

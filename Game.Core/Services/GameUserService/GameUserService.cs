@@ -25,13 +25,13 @@ namespace Game.Core.Services.GameUserService
         {
             return Execute<ServiceResponse<GameUserDto>>(request, (result) =>
             {
-                string name = request.UserInfo["name"];
+                string name = request.UserInfo[Models.Constants.UserLoginResult.Name];
                 var user = _userRepository.FindBy(x => x.Alias == name).FirstOrDefault();
                 if (user == null)
                 {
                     GameUser newUser = new GameUser()
                     {
-                        Alias = request.UserInfo["name"],
+                        Alias = name,
                         Email = null
                     };
                     _userRepository.Add(newUser);

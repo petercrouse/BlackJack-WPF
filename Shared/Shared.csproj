@@ -258,6 +258,16 @@
       <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
       <Name>Game.Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Game.Models\Game.Models.csproj">
+      <Project>{77ACACC3-F82D-4310-90F4-EAD39A99905C}</Project>
+      <Name>Game.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

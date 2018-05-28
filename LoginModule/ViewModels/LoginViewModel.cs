@@ -17,6 +17,7 @@ using Game.Core.System;
 using Game.Core.Requests.GameUserRequests;
 using Game.Core.Response;
 using Game.Models.Dto;
+using Shared;
 
 namespace LoginModule.ViewModels
 {
@@ -25,21 +26,6 @@ namespace LoginModule.ViewModels
         public LoginViewModel(ISystemService systemService, IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(systemService, regionManager, eventAggregator, logger)
         {
             SignInCommand = new DelegateCommand<string>(SignIn);
-        }
-
-        private string _username;
-        private string _password;
-
-        public string Username
-        {
-            get { return _username; }
-            set { SetProperty(ref _username, value); }
-        }
-
-        public string Password
-        {
-            get { return _password; }
-            set { SetProperty(ref _password, value); }
         }
 
         public DelegateCommand<string> SignInCommand { get; }
@@ -77,10 +63,10 @@ namespace LoginModule.ViewModels
             
         }
 
-        private void SignInComplete(ServiceResponse<GameUserDto> user)
+        private void SignInComplete(ServiceResponse<GameUserDto> result)
         {
-            Username = user.Response.Alias;
-            Password = user.Response.email;
+            StateBag.LoggedInUser = result.Response;
+            RegionManager.RequestNavigate(Constants.Regions.MainRegion, Constants.Views.HomePage);
         }
     }
 }
