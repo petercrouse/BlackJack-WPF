@@ -4,10 +4,12 @@
              xmlns:local="clr-namespace:LoginModule.Views"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:connectionName="clr-namespace:LoginModule"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -64,7 +66,9 @@
                     Width="130"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Bottom"
-                    Margin="0,0,0,60"/>
+                    Margin="0,0,0,60"
+                    Command="{Binding SignInCommand}"
+                    CommandParameter="{x:Static connectionName:ConnectionNames.UsernamePasswordAuthentication}"/>
 
             <Button Content="Sign up" 
                     Grid.Row="1"

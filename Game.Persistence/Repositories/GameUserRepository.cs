@@ -15,7 +15,7 @@ namespace Game.Persistence.Repositories
         {
             if (entity.DataState == DataState.New)
             {
-                entity.ModifiedDate = DateTimeOffset.Now;
+                entity.CreatedDate = DateTimeOffset.Now;
                 entity.DataState = DataState.Active;
                 Context.Set<GameUser>().Add(entity);
             }

@@ -16,6 +16,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>C:\Git\BlackJack-WPF\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -60,10 +61,16 @@
     <ManifestKeyFile>Blackjack.client_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -75,7 +82,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extensions\Microsoft\R Tools for Visual Studio\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -121,7 +130,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,24 +146,27 @@
     <PackageReference Include="log4net">
       <Version>2.0.8</Version>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
     <PackageReference Include="Prism.Unity" Version="6.3.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlackJack.Framework\Game.Framework.csproj">
-      <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
-      <Name>Game.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blackjack.models\Game.Core.csproj">
+    <ProjectReference Include="..\Game.Core\Game.Core.csproj">
       <Project>{1997d2c1-2e0a-4141-ab03-c71f4fcb8f82}</Project>
       <Name>Game.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BlackJack.persistence\Game.Persistence.csproj">
-      <Project>{80E8CE14-C54F-4253-803D-1192E892280F}</Project>
-      <Name>Game.Persistence</Name>
+    <ProjectReference Include="..\Game.Framework\Game.Framework.csproj">
+      <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
+      <Name>Game.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Game.Models\Game.Models.csproj">
       <Project>{77acacc3-f82d-4310-90f4-ead39a99905c}</Project>
       <Name>Game.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Game.Persistence\Game.Persistence.csproj">
+      <Project>{80e8ce14-c54f-4253-803d-1192e892280f}</Project>
+      <Name>Game.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\HomePageModule\HomePageModule.csproj">
       <Project>{5181e0bb-82df-459e-bb85-a7bd00a09a7b}</Project>

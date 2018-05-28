@@ -78,13 +78,13 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlackJack.Framework\Game.Framework.csproj">
-      <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
-      <Name>Game.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blackjack.models\Game.Core.csproj">
+    <ProjectReference Include="..\Game.Core\Game.Core.csproj">
       <Project>{1997d2c1-2e0a-4141-ab03-c71f4fcb8f82}</Project>
       <Name>Game.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Game.Framework\Game.Framework.csproj">
+      <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
+      <Name>Game.Framework</Name>
     </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{18291b8a-3eb1-4057-ba93-8a447eea105f}</Project>

@@ -1,4 +1,5 @@
 ﻿using Game.Core.Response;
+using Game.Core.System;
 using Game.Framework.Logging;
 using Game.Framework.Utilities;
 using Prism.Events;
@@ -13,13 +14,15 @@ namespace Shared.ViewModels
 {
     public class GameViewModel : BindableBase, INavigationAware
     {
+        protected ISystemService SystemService;
         protected IRegionManager RegionManager;
         protected IEventAggregator EventAggregator;
         protected ILogger Logger;
 
 
-        public GameViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger)
+        public GameViewModel(ISystemService systemService, IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger)
         {
+            SystemService = systemService;
             RegionManager = regionManager;
             EventAggregator = eventAggregator;
             Logger = logger;
@@ -45,12 +48,14 @@ namespace Shared.ViewModels
             Guard.ArgumentNotNull(action, "action");
             Guard.ArgumentNotNull(callback, "callback");
 
-            ServiceResponse<TReturn> response = new ServiceResponse<TReturn>();
-            var task = Task.Run(action);
-
-            response = await task;
+            var response = await Task.Run(action);
 
             callback(response);
+        }
+
+        public static class State
+        {
+            public static string LoggedInUser { get; set; }
         }
     }
 }

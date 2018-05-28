@@ -41,12 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\GameUserDto.cs" />
     <Compile Include="Entities\GameEntity.cs" />
     <Compile Include="Entities\GameUser.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\Scoreboard.cs" />
     <Compile Include="Enumerations\EnumBag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

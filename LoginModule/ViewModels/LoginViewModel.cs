@@ -9,18 +9,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using Auth0.OidcClient;
+using IdentityModel.OidcClient;
+using System.Diagnostics;
+using Game.Core.System;
+using Game.Core.Requests.GameUserRequests;
+using Game.Core.Response;
+using Game.Models.Dto;
 
 namespace LoginModule.ViewModels
 {
     public class LoginViewModel : GameViewModel
     {
-        public LoginViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(regionManager, eventAggregator, logger)
+        public LoginViewModel(ISystemService systemService, IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(systemService, regionManager, eventAggregator, logger)
         {
-            SignInCommand = new DelegateCommand(SignIn);
+            SignInCommand = new DelegateCommand<string>(SignIn);
         }
 
-        string _username;
-        string _password;
+        private string _username;
+        private string _password;
 
         public string Username
         {
@@ -34,11 +42,46 @@ namespace LoginModule.ViewModels
             set { SetProperty(ref _password, value); }
         }
 
-        public DelegateCommand SignInCommand { get; }
+        public DelegateCommand<string> SignInCommand { get; }
 
-        private void SignIn()
+        async private void SignIn(string connection)
         {
-            throw new NotImplementedException();
+            string domain = ConfigurationManager.AppSettings["Auth0:Domain"];
+            string clientId = ConfigurationManager.AppSettings["Auth0:ClientId"];
+
+            var client = new Auth0Client(new Auth0ClientOptions
+            {
+                Domain = domain,
+                ClientId = clientId
+            });
+
+            var extraParameters = new Dictionary<string, string>();
+
+            if (!string.IsNullOrEmpty(connection))
+                extraParameters.Add("connection", connection);
+
+            LoginResult loginResult = await client.LoginAsync();
+
+            if (!loginResult.IsError)
+            {
+                var userDetails = new Dictionary<string, string>();
+                foreach (var claim in loginResult.User.Claims)
+                {
+                    if (claim.Type != "updated_at")
+                    {
+                        userDetails.Add(claim.Type, claim.Value);
+                    }
+                }
+                PerformServiceCall(() => SystemService.GameUserService.CreateUser(CreateUserRequest.Create(userDetails)), SignInComplete);
+            }            
+            
+        }
+
+        private void SignInComplete(ServiceResponse<GameUserDto> user)
+        {
+            Username = user.Response.Alias;
+            Password = user.Response.email;
         }
     }
 }
+

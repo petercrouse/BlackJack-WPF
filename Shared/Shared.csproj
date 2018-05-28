@@ -250,13 +250,13 @@
     <Resource Include="Resources\ts.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlackJack.Framework\Game.Framework.csproj">
+    <ProjectReference Include="..\Game.Core\Game.Core.csproj">
+      <Project>{1997d2c1-2e0a-4141-ab03-c71f4fcb8f82}</Project>
+      <Name>Game.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Game.Framework\Game.Framework.csproj">
       <Project>{30142073-32d9-4550-ab9d-8807dc79aeed}</Project>
       <Name>Game.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Blackjack.models\Game.Core.csproj">
-      <Project>{1997D2C1-2E0A-4141-AB03-C71F4FCB8F82}</Project>
-      <Name>Game.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

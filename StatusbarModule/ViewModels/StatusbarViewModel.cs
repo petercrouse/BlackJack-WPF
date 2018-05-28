@@ -1,4 +1,5 @@
-﻿using Game.Framework.Logging;
+﻿using Game.Core.System;
+using Game.Framework.Logging;
 using Prism.Events;
 using Prism.Regions;
 using Shared.Events;
@@ -10,7 +11,7 @@ namespace StatusbarModule.ViewModels
     public class StatusbarViewModel : GameViewModel
     {
 
-        public StatusbarViewModel(IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(regionManager, eventAggregator, logger)
+        public StatusbarViewModel(ISystemService systemService, IRegionManager regionManager, IEventAggregator eventAggregator, ILogger logger) : base(systemService, regionManager, eventAggregator, logger)
         {
             EventAggregator.GetEvent<GameMessageEvent>().Subscribe(GameMessage);
 
