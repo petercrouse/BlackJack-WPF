@@ -81,11 +81,7 @@ namespace PlayBlackjackModule.ViewModels
         public string MessageBoard
         {
             get { return _messageBoard; }
-            set
-            {
-                SetProperty(ref _messageBoard, value);
-                EventAggregator.GetEvent<GameMessageEvent>().Publish(_messageBoard);
-            }
+            set { SetProperty(ref _messageBoard, value); }
         }
         #endregion
 
@@ -149,7 +145,7 @@ namespace PlayBlackjackModule.ViewModels
                 DealerHandValue = 0;
                 PlayerHandValue = 0;
                 MessageBoard = "";
-            }          
+            }
         }
 
         private void NewGame()
@@ -212,7 +208,7 @@ namespace PlayBlackjackModule.ViewModels
                     dealerHas5CardsWithValueSmallerThan21 = true;
             }
 
-            string winner = (dealerHas5CardsWithValueSmallerThan21 || 
+            string winner = (dealerHas5CardsWithValueSmallerThan21 ||
                 (DealerHandValue >= PlayerHandValue && DealerHandValue <= 21)) ? "Dealer wins!" : "Player wins!";
 
             if (DealerHandValue == PlayerHandValue && !dealerHas5CardsWithValueSmallerThan21)

@@ -15,5 +15,6 @@ namespace Game.Models.Constants
         public const string Picture = "picture";
         public const string Gender = "gender";
         public const string Locale = "locale";
+        public const string UpdatedAt = "updated_at";
     }
 }

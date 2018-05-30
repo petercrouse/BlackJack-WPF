@@ -53,9 +53,6 @@
                         <TranslateTransform/>
                     </TransformGroup>
                 </Border.RenderTransform>
-                <Border.Effect>
-                    <DropShadowEffect/>
-                </Border.Effect>
                 <ContentPresenter 
                                   VerticalAlignment="Center" 
                                   ClipToBounds="True" 

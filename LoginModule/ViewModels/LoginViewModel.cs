@@ -18,6 +18,7 @@ using Game.Core.Requests.GameUserRequests;
 using Game.Core.Response;
 using Game.Models.Dto;
 using Shared;
+using Shared.Events;
 
 namespace LoginModule.ViewModels
 {
@@ -58,6 +59,7 @@ namespace LoginModule.ViewModels
                         userDetails.Add(claim.Type, claim.Value);
                     }
                 }
+                userDetails.Add(loginResult.User.Claims.Last().Type, loginResult.User.Claims.Last().Value);
                 PerformServiceCall(() => SystemService.GameUserService.CreateUser(CreateUserRequest.Create(userDetails)), SignInComplete);
             }            
             
@@ -65,6 +67,12 @@ namespace LoginModule.ViewModels
 
         private void SignInComplete(ServiceResponse<GameUserDto> result)
         {
+            if (result.Notifications.HasErrors())
+            {
+                var error = result.Notifications.Errors().FirstOrDefault().Text;
+                var errorCode = result.Notifications.Errors().FirstOrDefault().Code;
+                EventAggregator.GetEvent<GameMessageEvent>().Publish($"[{errorCode}] {error}");
+            }
             StateBag.LoggedInUser = result.Response;
             RegionManager.RequestNavigate(Constants.Regions.MainRegion, Constants.Views.HomePage);
         }
