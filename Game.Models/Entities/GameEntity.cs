@@ -8,7 +8,7 @@ namespace Game.Models.Entities
     {
         public GameEntity()
         {
-            ReferenceId = new Guid();
+            ReferenceId = Guid.NewGuid();
             DataState = DataState.New;
             CreatedDate = DateTimeOffset.Now;
         }

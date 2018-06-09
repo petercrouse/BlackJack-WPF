@@ -50,7 +50,7 @@ namespace Game.Core.Services.GameUserService
                 else
                 {
                     result.Response = AsDto(user);
-                }                
+                }
             });
         }
 
